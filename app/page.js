@@ -491,7 +491,7 @@ export default function BloomWebsite() {
         <div className="wrap">
           <div className="two-col">
             <div className="sq-img">
-              <Image src="/founder.jpg" alt="Fridah Nairuti — Founder, Bloom & Co" fill style={{ objectFit: "cover" }} />
+              <Image src="/founder.png" alt="Fridah Nairuti — Founder, Bloom & Co" width={800} height={800} className="w-full h-full object-cover"/>
             </div>
             <div>
               <span className="label">Our Story</span>
