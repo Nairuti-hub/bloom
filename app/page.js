@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import {
-  Instagram,
+  InstagramIcon,
   Mail,
   Phone,
   MapPin,
@@ -71,8 +71,34 @@ const whyUs = [
 export default function BloomWebsite() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const contactItems = [
+    {
+      label: "Instagram",
+      value: "@bloomco.ke",
+      icon: <InstagramIcon size={20} />,
+      href: "https://instagram.com/bloomco.ke",
+    },
+    {
+      label: "Email",
+      value: "bloomandco@gmail.com",
+      icon: <Mail size={20} />,
+      href: "mailto:bloomandco@gmail.com",
+    },
+    {
+      label: "Phone",
+      value: "+254 724 973 277",
+      icon: <Phone size={20} />,
+      href: "tel:+254724973277",
+    },
+    {
+      label: "Location",
+      value: "Nairobi, Kenya",
+      icon: <MapPin size={20} />,
+    },
+  ];
+
   return (
-    <div style={{ minHeight: "100vh", background: "#f8f5f0", color: "#1a1a1a", overflowX: "hidden" }}>
+    <div style={{ minHeight: "100vh", background: "#f6f3ee", color: "#1f1f1f", overflowX: "hidden" }}>
 
       {/* ── GLOBAL STYLES ─────────────────────────────── */}
       <style>{`
@@ -696,32 +722,7 @@ export default function BloomWebsite() {
               }}
             >
 
-              {[
-                {
-                  label: "Instagram",
-                  value: "@bloomco.ke",
-                  href: INSTAGRAM_URL,
-                  icon: <Instagram size={20} />,
-                },
-                {
-                  label: "Email",
-                  value: "bloomandco@gmail.com",
-                  href: "mailto:bloomandco@gmail.com",
-                  icon: <Mail size={20} />,
-                },
-                {
-                  label: "Phone",
-                  value: "+254 724 973 277",
-                  href: "tel:+254724973277",
-                  icon: <Phone size={20} />,
-                },
-                {
-                  label: "Location",
-                  value: "Nairobi, Kenya",
-                  href: null,
-                  icon: <MapPin size={20} />,
-                },
-              ].map((item) => (
+              {contactItems.map((item) => (
                 <div
                   key={item.label}
                   style={{
