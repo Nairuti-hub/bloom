@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import {
-  InstagramIcon,
   Mail,
   Phone,
   MapPin,
@@ -75,7 +74,7 @@ export default function BloomWebsite() {
     {
       label: "Instagram",
       value: "@bloomco.ke",
-      icon: <InstagramIcon size={20} />,
+      icon: "📸",
       href: "https://instagram.com/bloomco.ke",
     },
     {
