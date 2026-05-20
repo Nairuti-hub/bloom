@@ -2,6 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import {
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+  ShoppingBag,
+} from "lucide-react";
 
 const SHOP_URL =
   "https://selar.com/m/fridah-makena993077?utm_source=ig&utm_medium=social&utm_content=link_in_bio";
@@ -59,13 +66,6 @@ const whyUs = [
   { title: "Premium Presentation", text: "Our products maintain a clean, modern, elegant, and corporate-friendly aesthetic." },
   { title: "Wellness Meets Productivity", text: "We uniquely position wellness as a key driver of healthier performance and sustainable productivity." },
   { title: "Flexible Partnerships", text: "Customizable wellness solutions tailored to different organizational needs and employee engagement initiatives." },
-];
-
-const contactItems = [
-  { label: "Instagram", value: "@bloomco.ke", href: INSTAGRAM_URL },
-  { label: "Email", value: "bloomandco@gmail.com", href: "mailto:bloomandco@gmail.com" },
-  { label: "Phone", value: "+254 724 973 277", href: "tel:+254724973277" },
-  { label: "Location", value: "Nairobi, Kenya", href: null },
 ];
 
 export default function BloomWebsite() {
@@ -647,35 +647,203 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── CONTACT ───────────────────────────────────── */}
-      <section id="contact" className="sp">
+      <section
+        id="contact"
+        className="sp"
+        style={{
+          background: "#f7f4ef",
+        }}
+      >
         <div className="wrap">
           <div className="contact-grid">
+
+            {/* LEFT */}
             <div>
               <span className="label">Get In Touch</span>
-              <h2 className="serif sh" style={{ marginBottom: 20 }}>
-                Let's Build<br /><em>Something Together</em>
+
+              <h2
+                className="serif sh"
+                style={{
+                  marginBottom: 24,
+                  lineHeight: 1.05,
+                }}
+              >
+                Let's Build
+                <br />
+                <em>Something Together</em>
               </h2>
-              <p style={{ color: "#555", fontSize: 15, lineHeight: 1.85 }}>
-                Whether you're an individual seeking intentional wellness tools, or an organization
-                looking to cultivate a thriving team — we'd love to connect.
+
+              <p
+                style={{
+                  color: "#555",
+                  fontSize: 16,
+                  lineHeight: 1.9,
+                  maxWidth: 520,
+                }}
+              >
+                Whether you're an individual seeking intentional wellness
+                tools, or an organization looking to cultivate a thriving
+                team — we'd love to connect.
               </p>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {contactItems.map((item) => (
-                <div key={item.label} style={{ background: "#fff", borderRadius: 14, padding: "18px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, boxShadow: "0 4px 18px rgba(0,0,0,0.05)" }}>
-                  <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#8a9c86", flexShrink: 0 }}>{item.label}</span>
-                  {item.href ? (
-                    <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      style={{ fontSize: 14, color: "#1a1a1a", textDecoration: "none", textAlign: "right", wordBreak: "break-word" }}>
-                      {item.value}
-                    </a>
-                  ) : (
-                    <span style={{ fontSize: 14, color: "#1a1a1a", textAlign: "right" }}>{item.value}</span>
-                  )}
+
+            {/* RIGHT */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 16,
+              }}
+            >
+
+              {[
+                {
+                  label: "Instagram",
+                  value: "@bloomco.ke",
+                  href: INSTAGRAM_URL,
+                  icon: <Instagram size={20} />,
+                },
+                {
+                  label: "Email",
+                  value: "bloomandco@gmail.com",
+                  href: "mailto:bloomandco@gmail.com",
+                  icon: <Mail size={20} />,
+                },
+                {
+                  label: "Phone",
+                  value: "+254 724 973 277",
+                  href: "tel:+254724973277",
+                  icon: <Phone size={20} />,
+                },
+                {
+                  label: "Location",
+                  value: "Nairobi, Kenya",
+                  href: null,
+                  icon: <MapPin size={20} />,
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  style={{
+                    background: "rgba(255,255,255,0.82)",
+                    backdropFilter: "blur(18px)",
+                    WebkitBackdropFilter: "blur(18px)",
+                    borderRadius: 26,
+                    padding: "24px 28px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: 20,
+                    boxShadow: "0 10px 40px rgba(0,0,0,0.05)",
+                    transition: "all 0.35s ease",
+                    border: "1px solid rgba(255,255,255,0.5)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 20px 60px rgba(0,0,0,0.08)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow =
+                      "0 10px 40px rgba(0,0,0,0.05)";
+                  }}
+                >
+
+                  {/* LEFT SIDE */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 18,
+                    }}
+                  >
+
+                    {/* ICON */}
+                    <div
+                      style={{
+                        width: 52,
+                        height: 52,
+                        borderRadius: "50%",
+                        background: "#f3eee7",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#1a1a1a",
+                        flexShrink: 0,
+                      }}
+                    >
+                      {item.icon}
+                    </div>
+
+                    {/* TEXT */}
+                    <div>
+                      <p
+                        style={{
+                          fontSize: 11,
+                          letterSpacing: "0.25em",
+                          textTransform: "uppercase",
+                          color: "#8a9c86",
+                          marginBottom: 6,
+                        }}
+                      >
+                        {item.label}
+                      </p>
+
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          target={item.href.startsWith("http") ? "_blank" : undefined}
+                          rel={
+                            item.href.startsWith("http")
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
+                          style={{
+                            fontSize: 16,
+                            color: "#1a1a1a",
+                            textDecoration: "none",
+                          }}
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <span
+                          style={{
+                            fontSize: 16,
+                            color: "#1a1a1a",
+                          }}
+                        >
+                          {item.value}
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </div>
               ))}
-              <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-dark" style={{ textAlign: "center", marginTop: 6 }}>
-                Shop on Selar
+
+              {/* BUTTON */}
+              <a
+                href={SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill-btn pill-dark"
+                style={{
+                  width: "100%",
+                  textAlign: "center",
+                  marginTop: 10,
+                  padding: "22px 30px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 14,
+                  fontSize: 13,
+                  letterSpacing: "0.22em",
+                  boxShadow: "0 16px 40px rgba(0,0,0,0.15)",
+                }}
+              >
+                <ShoppingBag size={18} />
+                Shop On Selar
               </a>
             </div>
           </div>
