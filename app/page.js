@@ -523,24 +523,72 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── SERVICES ──────────────────────────────────── */}
-      <section id="services" className="sp">
-        <div className="wrap">
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <span className="label">Products & Services</span>
-            <h2 className="serif sh">Designed for<br /><em>Intentional Growth</em></h2>
+      <section id="services" className="py-32 bg-[#f6f3ee]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-24">
+            <p className="uppercase tracking-[0.35em] text-sm text-[#8c9b88] mb-6">
+              Products & Services
+            </p>
+            <h2 className="text-5xl lg:text-7xl font-extralight leading-tight">
+              Designed for
+              <br />
+              <span className="italic">Intentional Growth</span>
+            </h2>
           </div>
-          <div className="services-grid">
-            {services.map((item) => (
-              <div key={item.number} className="s-card">
-                <p style={{ fontSize: 11, letterSpacing: "0.2em", color: "#8a9c86", marginBottom: 12 }}>{item.number}</p>
-                <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#e8ede5", marginBottom: 18 }} />
-                <h3 className="serif" style={{ fontSize: 22, fontWeight: 400, marginBottom: 10, lineHeight: 1.2 }}>{item.title}</h3>
-                <p style={{ color: "#666", lineHeight: 1.75, fontSize: 14 }}>{item.text}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                number: "01",
+                title: "Wellness Journals",
+                text: "Thoughtfully designed guided journals that promote self-reflection, mindfulness, gratitude, and intentional living.",
+                icon: "📖",
+              },
+              {
+                number: "02",
+                title: "Productivity Guides",
+                text: "Resources developed to support healthier work habits, improved focus, and sustainable productivity.",
+                icon: "📝",
+              },
+              {
+                number: "03",
+                title: "Adult Coloring & Reflection",
+                text: "Creative wellness tools that encourage relaxation, mindfulness, stress management, and emotional decompression.",
+                icon: "🎨",
+              },
+              {
+                number: "04",
+                title: "Children's Wellness",
+                text: "Engaging reflection tools designed to nurture creativity, confidence, and emotional expression in children.",
+                icon: "🧸",
+              },
+              {
+                number: "05",
+                title: "Corporate Wellness",
+                text: "Customized wellness resources designed for organizations seeking healthier workplace culture.",
+                icon: "💼",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-[36px] p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500"
+              >
+                <div className="flex items-center justify-between mb-10">
+                  <span className="text-sm tracking-[0.3em] text-[#9aa596]">
+                    {item.number}
+                  </span>
+                  <div className="w-20 h-20 rounded-full bg-[#f1f2eb] flex items-center justify-center text-4xl group-hover:scale-110 transition duration-500">
+                    {item.icon}
+                  </div>
+                </div>
+                <h3 className="text-3xl font-light mb-6 leading-snug">
+                  {item.title}
+                </h3>
+                <div className="w-14 h-[2px] bg-[#cdb98f] mb-6"></div>
+                <p className="text-[#666] leading-relaxed text-lg">
+                  {item.text}
+                </p>
               </div>
             ))}
-          </div>
-          <div style={{ textAlign: "center", marginTop: 44 }}>
-            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-dark">Shop All Products</a>
           </div>
         </div>
       </section>
