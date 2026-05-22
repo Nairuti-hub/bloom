@@ -16,6 +16,7 @@ const products = [
   {
     category: "wellness",
     title: "Corporate Wellness Journal",
+    coverImg: "/wellness journal.png",
     subtitle: "A 30-Day Practice in Mindful Performance",
     description: "Five minutes in the morning. A few at end of day. A weekly pause. Thirty days to reflect, realign, and thrive at work.",
     features: ["Daily morning check-in", "Weekly themes & insights", "Burnout recognition guide", "Month-end reflection"],
@@ -26,6 +27,7 @@ const products = [
   {
     category: "wellness",
     title: "Flow With Your Cycle",
+    coverImg: "/flow with your cycle.png",
     subtitle: "A Woman's Guide to Aligning Energy and Work",
     description: "It's not laziness. It's your cycle. Understand your 4 monthly phases, align your energy with your work, and stop forcing — start flowing.",
     features: ["4 cycle phases explained", "Energy-work alignment", "Productivity by phase", "Self-compassion tools"],
@@ -36,6 +38,7 @@ const products = [
   {
     category: "wellness",
     title: "Well-being & Productivity Guide",
+    coverImg: "/wellbeing and productivity guide.png",
     subtitle: "A Guide to Well-being and Productivity at the Workplace",
     description: "Well-being isn't a reward. It's the foundation of sustainable productivity. A guide for professionals who show up fully — and want to keep doing so.",
     features: ["Burnout prevention", "Mindful work habits", "Focus & energy tools", "Work-life integration"],
@@ -46,6 +49,7 @@ const products = [
   {
     category: "wellness",
     title: "Daily Devotional Workbook",
+    coverImg: "/daily devotion.png",
     subtitle: "Mother's Day Edition — Nourishes Her Soul",
     description: "A beautiful space for prayer, reflection, scripture study, gratitude, and intentional quiet time with God. A perfect gift for the woman who deserves more than a gift.",
     features: ["Daily devotional pages", "Prayer & reflection space", "Gratitude journaling", "Scripture study prompts"],
@@ -56,6 +60,7 @@ const products = [
   {
     category: "wellness",
     title: "Floral Coloring Book for Adults",
+    coverImg: "/floral colourinngg book for adults.png",
     subtitle: "Quiet Creative Moments for You",
     description: "Sometimes the most productive thing you can do is slow down. Relax your mind, reduce stress, and reconnect with yourself. No pressure. No perfection.",
     features: ["Intricate floral designs", "Stress relief focused", "Perfect for self-care", "Weekend reset tool"],
@@ -66,6 +71,7 @@ const products = [
   {
     category: "kids",
     title: "Kids Affirmation Coloring E-Book",
+    coverImg: "/kids affirmation colouring book.png",
     subtitle: "Build Confidence Through Color",
     description: "A fun and uplifting coloring experience designed to help children build confidence, creativity, and positive thinking — one page at a time.",
     features: ["Positive affirmations", "Fun coloring pages", "Screen-free creativity", "Builds self-belief"],
@@ -76,6 +82,7 @@ const products = [
   {
     category: "kids",
     title: "ABC Fun — Alphabet Coloring Book",
+    coverImg: "/abc fun kids.png",
     subtitle: "Playtime Learning for Little Ones",
     description: "Colorful alphabet adventures that make learning fun. Perfect for ages 3–6 who are just beginning to explore letters, words, and the world around them.",
     features: ["A–Z letter pages", "Simple illustrations", "Learning through play", "Great for ages 3–6"],
@@ -86,6 +93,7 @@ const products = [
   {
     category: "kids",
     title: '"Quiet Time" Coloring for Kids',
+    coverImg: "/quiet time colouring for kids.png",
     subtitle: "Simple, Fun Pages for Calm & Creative Play",
     description: "Keep your little ones happily engaged while you enjoy a well-deserved moment to reset. Fun land animal illustrations that spark creativity and encourage quiet time.",
     features: ["Land animal illustrations", "Ages 3–8", "Instant PDF download", "Calm, creative focus"],
@@ -313,7 +321,7 @@ export default function BloomWebsite() {
   const displayProducts  = productTab === "wellness" ? wellnessProducts : kidsProducts;
 
   return (
-    <div style={{ minHeight: "100vh", background: "#f7f3ef", color: "#2a1f1f", overflowX: "hidden" }}>
+    <div style={{ minHeight: "100vh", background: "#F3ECE4", color: "#4E403A", overflowX: "hidden" }}>
 
       {/* ── GLOBAL STYLES ─────────────────────────────── */}
       <style>{`
@@ -331,27 +339,27 @@ export default function BloomWebsite() {
           border: 1px solid transparent; font-family: 'DM Sans', sans-serif;
           font-weight: 400; white-space: nowrap;
         }
-        .pill-rose         { background: #b5606a; color: #fff; border-color: #b5606a; }
-        .pill-rose:hover   { background: #9e4f58; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(181,96,106,0.3); }
-        .pill-outline-rose { background: transparent; color: #b5606a; border-color: #b5606a; }
-        .pill-outline-rose:hover { background: #b5606a; color: #fff; transform: translateY(-2px); }
-        .pill-sage         { background: #6b8c72; color: #fff; border-color: #6b8c72; }
+        .pill-rose         { background: #BE6E78; color: #fff; border-color: #BE6E78; }
+        .pill-rose:hover   { background: #9E5C65; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(190,110,120,0.3); }
+        .pill-outline-rose { background: transparent; color: #BE6E78; border-color: #BE6E78; }
+        .pill-outline-rose:hover { background: #BE6E78; color: #fff; transform: translateY(-2px); }
+        .pill-sage         { background: #7A8766; color: #fff; border-color: #7A8766; }
         .pill-sage:hover   { background: #5a7860; transform: translateY(-2px); }
-        .pill-light        { background: #f7f3ef; color: #2a1f1f; border-color: #f7f3ef; }
+        .pill-light        { background: #F3ECE4; color: #4E403A; border-color: #F3ECE4; }
         .pill-light:hover  { background: #ede8e0; transform: translateY(-2px); }
-        .pill-dark         { background: #b5606a; color: #fff; border-color: #b5606a; }
-        .pill-dark:hover   { background: #9e4f58; transform: translateY(-2px); }
+        .pill-dark         { background: #BE6E78; color: #fff; border-color: #BE6E78; }
+        .pill-dark:hover   { background: #9E5C65; transform: translateY(-2px); }
 
         .nav-link {
           position: relative; font-size: 13px; letter-spacing: 0.12em;
-          text-transform: uppercase; color: #2a1f1f; text-decoration: none;
+          text-transform: uppercase; color: #4E403A; text-decoration: none;
           padding-bottom: 2px; font-family: 'DM Sans', sans-serif;
         }
-        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #b5606a; transition: width 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #BE6E78; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
-        .nav-link:hover { color: #b5606a; }
+        .nav-link:hover { color: #BE6E78; }
 
-        .label { display: block; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #b5606a; margin-bottom: 16px; font-weight: 400; }
+        .label { display: block; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #BE6E78; margin-bottom: 16px; font-weight: 400; }
 
         .wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
         @media (min-width: 600px)  { .wrap { padding: 0 32px; } }
@@ -375,7 +383,7 @@ export default function BloomWebsite() {
         .hero-visible .hero-word { }
 
         .burger { display: flex; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 200; position: relative; }
-        .burger span { display: block; height: 2px; background: #2a1f1f; transition: all 0.3s ease; transform-origin: center; }
+        .burger span { display: block; height: 2px; background: #4E403A; transition: all 0.3s ease; transform-origin: center; }
         .burger span:nth-child(1) { width: 22px; }
         .burger span:nth-child(2) { width: 22px; }
         .burger span:nth-child(3) { width: 14px; }
@@ -389,22 +397,22 @@ export default function BloomWebsite() {
         @media (min-width: 768px) { .desk-nav  { display: flex; gap: 36px; align-items: center; } }
         @media (min-width: 768px) { .desk-shop { display: inline-block; } }
 
-        .drawer { position: fixed; inset: 0; background: #f7f3ef; z-index: 150; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 32px; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77,0,0.175,1); }
+        .drawer { position: fixed; inset: 0; background: #F3ECE4; z-index: 150; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 32px; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77,0,0.175,1); }
         .drawer.open { transform: translateX(0); }
         @media (min-width: 768px) { .drawer { display: none !important; } }
-        .drawer-link { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,8vw,48px); font-weight: 300; color: #2a1f1f; text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
-        .drawer-link:hover { color: #b5606a; }
+        .drawer-link { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,8vw,48px); font-weight: 300; color: #4E403A; text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+        .drawer-link:hover { color: #BE6E78; }
 
         .hero-grid { display: flex; flex-direction: column; gap: 40px; padding: 52px 0 64px; }
         @media (min-width: 860px) { .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 80px 0 100px; } }
-        .hero-img { order: -1; border-radius: 28px; overflow: hidden; box-shadow: 0 32px 80px rgba(181,96,106,0.15); aspect-ratio: 4/5; position: relative; width: 100%; }
+        .hero-img { order: -1; border-radius: 28px; overflow: hidden; box-shadow: 0 32px 80px rgba(190,110,120,0.15); aspect-ratio: 4/5; position: relative; width: 100%; }
         @media (min-width: 860px) { .hero-img { order: 0; border-radius: 40px; } }
         .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
 
         .two-col { display: flex; flex-direction: column; gap: 48px; }
         @media (min-width: 860px) { .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; } }
         .two-col-top { align-items: start; }
-        .sq-img { border-radius: 28px; overflow: hidden; box-shadow: 0 24px 64px rgba(181,96,106,0.12); aspect-ratio: 1/1; position: relative; width: 100%; }
+        .sq-img { border-radius: 28px; overflow: hidden; box-shadow: 0 24px 64px rgba(190,110,120,0.12); aspect-ratio: 1/1; position: relative; width: 100%; }
         @media (min-width: 860px) { .sq-img { border-radius: 40px; } }
 
         .v-row { display: grid; grid-template-columns: 36px 1fr; gap: 16px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.1); align-items: start; transition: all 0.5s ease; }
@@ -441,8 +449,8 @@ export default function BloomWebsite() {
         @media (min-width: 900px) { .peek-grid { grid-template-columns: repeat(3,1fr); } }
 
         /* quiz */
-        .quiz-option { background: #fff; border: 1.5px solid rgba(181,96,106,0.15); border-radius: 16px; padding: 16px 20px; cursor: pointer; transition: all 0.25s ease; text-align: left; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2a1f1f; width: 100%; }
-        .quiz-option:hover { border-color: #b5606a; background: #f5e6e8; transform: translateX(4px); }
+        .quiz-option { background: #F3ECE4; border: 1.5px solid rgba(190,110,120,0.18); border-radius: 16px; padding: 16px 20px; cursor: pointer; transition: all 0.25s ease; text-align: left; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #4E403A; width: 100%; }
+        .quiz-option:hover { border-color: #BE6E78; background: #EDD8DA; transform: translateX(4px); }
 
         /* mobile sticky bar */
         .sticky-bar { display: none; }
@@ -458,11 +466,17 @@ export default function BloomWebsite() {
         .v-row-visible { opacity: 1; transform: translateX(0); transition: opacity 0.6s ease, transform 0.6s ease; }
 
         /* img placeholder */
-        .img-placeholder { background: linear-gradient(135deg, #f5e6e8 0%, #e8ede5 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #b5606a; font-size: 12px; letter-spacing: 0.08em; text-align: center; padding: 20px; }
+        .img-placeholder { background: linear-gradient(135deg, #EDD8DA 0%, #dce5d5 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #BE6E78; font-size: 12px; letter-spacing: 0.08em; text-align: center; padding: 20px; }
+
+        /* product card image hover */
+        .prod-card:hover img { transform: scale(1.04); }
 
         /* founder section */
         .founder-grid { display: flex; flex-direction: column; gap: 48px; }
         @media (min-width: 860px) { .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; } }
+
+        /* gold accent */
+        .gold-accent { color: #B38A4A; }
       `}</style>
 
       {/* ── WHATSAPP FLOATING BUTTON ───────────────────── */}
@@ -473,9 +487,9 @@ export default function BloomWebsite() {
       </a>
 
       {/* ── MOBILE STICKY BAR ─────────────────────────── */}
-      <div className="sticky-bar" style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 290, background: "#b5606a", padding: "14px 20px", alignItems: "center", justifyContent: "space-between" }}>
+      <div className="sticky-bar" style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 290, background: "#BE6E78", padding: "14px 20px", alignItems: "center", justifyContent: "space-between" }}>
         <p style={{ color: "#fff", fontSize: 13, fontWeight: 400 }}>Ready to bloom? 🌸</p>
-        <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" style={{ background: "#fff", color: "#b5606a", padding: "8px 20px", borderRadius: 100, fontSize: 12, fontWeight: 500, textDecoration: "none", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+        <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" style={{ background: "#fff", color: "#BE6E78", padding: "8px 20px", borderRadius: 100, fontSize: 12, fontWeight: 500, textDecoration: "none", letterSpacing: "0.1em", textTransform: "uppercase" }}>
           Shop Now →
         </a>
       </div>
@@ -493,7 +507,7 @@ export default function BloomWebsite() {
       </div>
 
       {/* ── NAVBAR ────────────────────────────────────── */}
-      <header style={{ position: "sticky", top: 0, zIndex: 160, background: "rgba(247,243,239,0.95)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: "1px solid rgba(181,96,106,0.1)" }}>
+      <header style={{ position: "sticky", top: 0, zIndex: 160, background: "rgba(243,236,228,0.96)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: "1px solid rgba(190,110,120,0.12)" }}>
         <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 20px" }}>
           <a href="#" style={{ textDecoration: "none", zIndex: 200, position: "relative" }}>
             <Image src="/logo.png" alt="Bloom & Co — Wellness and Productivity Brand Nairobi Kenya" width={130} height={52} style={{ height: 38, width: "auto" }} />
@@ -513,21 +527,21 @@ export default function BloomWebsite() {
       </header>
 
       {/* ── HERO ──────────────────────────────────────── */}
-      <section style={{ background: "#f7f3ef" }} aria-label="Bloom and Co — Where Wellness Meets Purpose">
+      <section style={{ background: "#F3ECE4" }} aria-label="Bloom and Co — Where Wellness Meets Purpose">
         <div className="wrap">
           <div className="hero-grid">
             <div className={heroVisible ? "hero-visible" : ""}>
               <span className="label">Wellness · Productivity · Intentional Living</span>
-              <h1 className="serif" style={{ fontSize: "clamp(42px, 8vw, 88px)", fontWeight: 300, lineHeight: 0.95, letterSpacing: "-0.02em", color: "#2a1f1f" }}>
+              <h1 className="serif" style={{ fontSize: "clamp(42px, 8vw, 88px)", fontWeight: 300, lineHeight: 0.95, letterSpacing: "-0.02em", color: "#4E403A" }}>
                 {["Where", "Wellness"].map((w, i) => (
                   <span key={w} className="hero-word" style={{ animationDelay: `${i * 0.15}s`, marginRight: "0.25em" }}>{w}</span>
                 ))}
                 <br />
                 {["Meets", "Purpose"].map((w, i) => (
-                  <em key={w} className="hero-word" style={{ color: "#b5606a", animationDelay: `${(i + 2) * 0.15}s`, marginRight: i === 0 ? "0.25em" : 0 }}>{w}</em>
+                  <em key={w} className="hero-word" style={{ color: "#BE6E78", animationDelay: `${(i + 2) * 0.15}s`, marginRight: i === 0 ? "0.25em" : 0 }}>{w}</em>
                 ))}
               </h1>
-              <p className="hero-word" style={{ fontSize: "clamp(15px, 2.5vw, 17px)", color: "#6b5555", lineHeight: 1.8, maxWidth: 480, marginTop: 20, animationDelay: "0.7s" }}>
+              <p className="hero-word" style={{ fontSize: "clamp(15px, 2.5vw, 17px)", color: "#5A4D47", lineHeight: 1.8, maxWidth: 480, marginTop: 20, animationDelay: "0.7s" }}>
                 Bloom & Co creates intentional wellness and productivity tools that help individuals and organizations cultivate healthier, more balanced, and more meaningful lives — across Africa and beyond.
               </p>
               <div className="hero-btns">
@@ -537,19 +551,21 @@ export default function BloomWebsite() {
               </div>
             </div>
             <div className="hero-img" style={{ transform: "translateZ(0)" }}>
-              {/* Hero image placeholder — replace with your best flat-lay journal lifestyle photo */}
-              <div className="img-placeholder" style={{ width: "100%", height: "100%", minHeight: 400, position: "absolute", inset: 0 }}>
-                <span style={{ fontSize: 48 }}>🌸</span>
-                <span style={{ color: "#b5606a", fontWeight: 500 }}>HERO IMAGE</span>
-                <span style={{ color: "#6b5555", maxWidth: 200 }}>Lifestyle flat-lay: journal, rose, pen on cream surface</span>
-              </div>
+              <Image
+                src="/hero.png"
+                alt="Bloom & Co — Wellness journals and intentional living tools by Fridah Nairuti, Nairobi Kenya"
+                fill
+                priority
+                sizes="(max-width: 860px) 100vw, 50vw"
+                style={{ objectFit: "cover", objectPosition: "center top" }}
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ── MARQUEE ───────────────────────────────────── */}
-      <div style={{ background: "#b5606a", color: "#fff", overflow: "hidden", padding: "15px 0" }}>
+      <div style={{ background: "#BE6E78", color: "#fff", overflow: "hidden", padding: "15px 0" }}>
         <div className="marquee-track">
           {Array(2).fill(null).map((_, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: 24, paddingRight: 24 }}>
@@ -568,29 +584,30 @@ export default function BloomWebsite() {
         <div className="wrap">
           <div className="two-col">
             <div className="sq-img">
-              {/* Founder photo placeholder — use the Selar profile photo of Fridah holding the Devotion Workbook */}
-              <div className="img-placeholder" style={{ width: "100%", height: "100%", minHeight: 400, position: "absolute", inset: 0 }}>
-                <span style={{ fontSize: 48 }}>👩🏾</span>
-                <span style={{ color: "#b5606a", fontWeight: 500 }}>FOUNDER PHOTO</span>
-                <span style={{ color: "#6b5555", maxWidth: 200 }}>Fridah holding the Devotion Workbook — warm, natural smile</span>
-              </div>
+              <Image
+                src="/about.png"
+                alt="Fridah Nairuti — Founder of Bloom & Co, Nairobi Kenya"
+                fill
+                sizes="(max-width: 860px) 100vw, 50vw"
+                style={{ objectFit: "cover", objectPosition: "top center" }}
+              />
             </div>
             <div>
               <span className="label">Our Story</span>
               <h2 className="serif sh" style={{ marginBottom: 20 }}>
                 Wellness Is The<br />Foundation of<br /><em>Sustainable Growth</em>
               </h2>
-              <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.85, marginBottom: 14 }}>
+              <p style={{ color: "#5A4D47", fontSize: 15, lineHeight: 1.85, marginBottom: 14 }}>
                 Bloom & Co bridges wellness and workplace productivity through intentional tools and meaningful experiences. Founded in Nairobi, Kenya by Fridah Nairuti — an administration and operations professional with a deep passion for holistic living.
               </p>
-              <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.85, marginBottom: 28 }}>
+              <p style={{ color: "#5A4D47", fontSize: 15, lineHeight: 1.85, marginBottom: 28 }}>
                 Our vision is to become a leading wellness and productivity brand in Africa — empowering individuals and organizations to thrive through reflection, clarity, and intentional living.
               </p>
-              <div style={{ background: "#f5e6e8", borderRadius: 16, padding: "20px 22px", borderLeft: "3px solid #b5606a" }}>
-                <p style={{ fontSize: 15, color: "#6b5555", lineHeight: 1.8, marginBottom: 10, fontStyle: "italic" }}>
+              <div style={{ background: "#EDD8DA", borderRadius: 16, padding: "20px 22px", borderLeft: "3px solid #BE6E78" }}>
+                <p style={{ fontSize: 15, color: "#5A4D47", lineHeight: 1.8, marginBottom: 10, fontStyle: "italic" }}>
                   "This journal was made for you. Not for your employer. Not for a performance review. For you — the person who shows up every day, carries more than most people see, and rarely gets a quiet moment to ask how you're actually doing."
                 </p>
-                <p style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#b5606a" }}>
+                <p style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#BE6E78" }}>
                   Fridah Nairuti — Founder, Bloom & Co
                 </p>
               </div>
@@ -600,12 +617,12 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── PEEK INSIDE ───────────────────────────────── */}
-      <section className="sp" style={{ background: "#2a1f1f" }}>
+      <section className="sp" style={{ background: "#4E403A" }}>
         <div className="wrap">
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#e8b4b8", marginBottom: 16 }}>What's Inside</span>
-            <h2 className="serif sh" style={{ color: "#f7f3ef" }}>
-              A Look Inside the<br /><em style={{ color: "#e8b4b8" }}>Corporate Wellness Journal</em>
+            <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#E8B4B8", marginBottom: 16 }}>What's Inside</span>
+            <h2 className="serif sh" style={{ color: "#F3ECE4" }}>
+              A Look Inside the<br /><em style={{ color: "#E8B4B8" }}>Corporate Wellness Journal</em>
             </h2>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 15, maxWidth: 560, margin: "20px auto 0", lineHeight: 1.8 }}>
               Five minutes in the morning. A few at end of day. A weekly pause. Thirty days to reflect, realign, and thrive.
@@ -614,12 +631,12 @@ export default function BloomWebsite() {
           <div className="peek-grid">
             {peekItems.map((item, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 20, padding: "28px 24px", transition: "all 0.3s ease" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "rgba(181,96,106,0.12)"; e.currentTarget.style.borderColor = "rgba(181,96,106,0.3)"; }}
+                onMouseEnter={e => { e.currentTarget.style.background = "rgba(190,110,120,0.12)"; e.currentTarget.style.borderColor = "rgba(190,110,120,0.3)"; }}
                 onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
               >
                 <div style={{ fontSize: 32, marginBottom: 14 }}>{item.icon}</div>
-                <h3 className="serif" style={{ fontSize: 20, fontWeight: 400, color: "#f7f3ef", marginBottom: 10 }}>{item.label}</h3>
-                <div style={{ width: 32, height: 2, background: "#b5606a", marginBottom: 12, borderRadius: 2 }} />
+                <h3 className="serif" style={{ fontSize: 20, fontWeight: 400, color: "#F3ECE4", marginBottom: 10 }}>{item.label}</h3>
+                <div style={{ width: 32, height: 2, background: "#BE6E78", marginBottom: 12, borderRadius: 2 }} />
                 <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, lineHeight: 1.8 }}>{item.desc}</p>
               </div>
             ))}
@@ -631,14 +648,14 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── PRODUCTS ──────────────────────────────────── */}
-      <section id="products" className="sp" style={{ background: "#f7f3ef" }}>
+      <section id="products" className="sp" style={{ background: "#F3ECE4" }}>
         <div className="wrap">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <span className="label">Our Collection</span>
             <h2 className="serif sh">
               Tools for Every<br /><em>Season of Your Life</em>
             </h2>
-            <p style={{ color: "#6b5555", fontSize: 15, maxWidth: 520, margin: "16px auto 0", lineHeight: 1.8 }}>
+            <p style={{ color: "#5A4D47", fontSize: 15, maxWidth: 520, margin: "16px auto 0", lineHeight: 1.8 }}>
               From corporate teams to curious kids — every Bloom & Co product is designed with intention and care.
             </p>
           </div>
@@ -648,9 +665,9 @@ export default function BloomWebsite() {
             {[{ key: "wellness", label: "Wellness & Productivity", emoji: "🌸" }, { key: "kids", label: "Mindful Kids", emoji: "🧸" }].map(tab => (
               <button key={tab.key} onClick={() => setProductTab(tab.key)} style={{
                 padding: "10px 24px", borderRadius: 100, border: "1.5px solid",
-                borderColor: productTab === tab.key ? "#b5606a" : "rgba(181,96,106,0.2)",
-                background: productTab === tab.key ? "#b5606a" : "transparent",
-                color: productTab === tab.key ? "#fff" : "#b5606a",
+                borderColor: productTab === tab.key ? "#BE6E78" : "rgba(190,110,120,0.2)",
+                background: productTab === tab.key ? "#BE6E78" : "transparent",
+                color: productTab === tab.key ? "#fff" : "#BE6E78",
                 fontSize: 13, letterSpacing: "0.08em", cursor: "pointer",
                 fontFamily: "'DM Sans', sans-serif", transition: "all 0.25s ease",
               }}>
@@ -661,39 +678,43 @@ export default function BloomWebsite() {
 
           <div className="prod-grid">
             {displayProducts.map((product, i) => (
-              <div key={i} style={{ background: "#fff", borderRadius: 28, overflow: "hidden", boxShadow: "0 8px 32px rgba(181,96,106,0.07)", transition: "transform 0.35s ease, box-shadow 0.35s ease", display: "flex", flexDirection: "column", minWidth: 0 }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 56px rgba(181,96,106,0.13)"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(181,96,106,0.07)"; }}
+              <div key={i} className="prod-card" style={{ background: "#fff", borderRadius: 28, overflow: "hidden", boxShadow: "0 8px 32px rgba(190,110,120,0.07)", transition: "transform 0.35s ease, box-shadow 0.35s ease", display: "flex", flexDirection: "column", minWidth: 0 }}
+                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 24px 60px rgba(190,110,120,0.14)"; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(190,110,120,0.07)"; }}
               >
-                {/* cover image area */}
-                <div style={{ aspectRatio: "3/2", position: "relative", background: "linear-gradient(135deg, #f5e6e8, #e8ede5)" }}>
-                  <div className="img-placeholder" style={{ position: "absolute", inset: 0 }}>
-                    <span style={{ fontSize: 40 }}>{product.icon}</span>
-                    <span style={{ color: "#b5606a", fontWeight: 500, fontSize: 10, letterSpacing: "0.15em" }}>COVER IMAGE</span>
-                    <span style={{ color: "#6b5555", fontSize: 10, maxWidth: 160, lineHeight: 1.5 }}>{product.coverDesc}</span>
-                  </div>
+                {/* cover image */}
+                <div style={{ aspectRatio: "3/2", position: "relative", background: "#EDD8DA" }}>
+                  {product.coverImg && (
+                    <Image
+                      src={product.coverImg}
+                      alt={product.title}
+                      fill
+                      sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 33vw"
+                      style={{ objectFit: "cover", objectPosition: "center top", transition: "transform 0.4s ease" }}
+                    />
+                  )}
                   {product.badge && (
-                    <div style={{ position: "absolute", top: 14, left: 14, background: "#b5606a", color: "#fff", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 100 }}>
+                    <div style={{ position: "absolute", top: 14, left: 14, background: "#BE6E78", color: "#fff", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 100 }}>
                       {product.badge}
                     </div>
                   )}
                 </div>
                 {/* card body */}
                 <div style={{ padding: "24px 24px 28px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
-                  <p style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#b5606a", marginBottom: 8 }}>
+                  <p style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#BE6E78", marginBottom: 8 }}>
                     {product.subtitle}
                   </p>
-                  <h3 className="serif" style={{ fontSize: 22, fontWeight: 400, marginBottom: 10, lineHeight: 1.2, color: "#2a1f1f" }}>
+                  <h3 className="serif" style={{ fontSize: 22, fontWeight: 400, marginBottom: 10, lineHeight: 1.2, color: "#4E403A" }}>
                     {product.title}
                   </h3>
-                  <div style={{ width: 36, height: 2, background: "#b5606a", marginBottom: 12, borderRadius: 2 }} />
-                  <p style={{ color: "#6b5555", fontSize: 13, lineHeight: 1.8, marginBottom: 16, flexGrow: 1 }}>
+                  <div style={{ width: 36, height: 2, background: "#BE6E78", marginBottom: 12, borderRadius: 2 }} />
+                  <p style={{ color: "#5A4D47", fontSize: 13, lineHeight: 1.8, marginBottom: 16, flexGrow: 1 }}>
                     {product.description}
                   </p>
                   <ul style={{ listStyle: "none", marginBottom: 20, display: "flex", flexDirection: "column", gap: 6 }}>
                     {product.features.map((f, fi) => (
-                      <li key={fi} style={{ fontSize: 12, color: "#6b5555", display: "flex", alignItems: "center", gap: 8 }}>
-                        <span style={{ color: "#b5606a", fontWeight: 600 }}>✓</span> {f}
+                      <li key={fi} style={{ fontSize: 12, color: "#5A4D47", display: "flex", alignItems: "center", gap: 8 }}>
+                        <span style={{ color: "#BE6E78", fontWeight: 600 }}>✓</span> {f}
                       </li>
                     ))}
                   </ul>
@@ -712,10 +733,10 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── CORE VALUES ───────────────────────────────── */}
-      <section id="values" className="sp" style={{ background: "#2a1f1f", color: "#f7f3ef" }}>
+      <section id="values" className="sp" style={{ background: "#4E403A", color: "#F3ECE4" }}>
         <div className="wrap">
           <div style={{ marginBottom: 48 }}>
-            <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#e8b4b8", marginBottom: 16, fontWeight: 400 }}>Core Values</span>
+            <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#E8B4B8", marginBottom: 16, fontWeight: 400 }}>Core Values</span>
             <h2 className="serif sh">Built on Principles<br /><em>That Matter</em></h2>
           </div>
           <div ref={valuesRef}>
@@ -726,9 +747,9 @@ export default function BloomWebsite() {
                   transitionDelay: `${i * 0.12}s`,
                   ...(i === values.length - 1 ? { borderBottom: "1px solid rgba(255,255,255,0.1)" } : {}),
                 }}>
-                <span style={{ fontSize: 11, color: "#e8b4b8", letterSpacing: "0.1em", paddingTop: 4 }}>0{i + 1}</span>
+                <span style={{ fontSize: 11, color: "#E8B4B8", letterSpacing: "0.1em", paddingTop: 4 }}>0{i + 1}</span>
                 <div>
-                  <h3 className="serif" style={{ fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 400, color: "#f7f3ef" }}>{v.label}</h3>
+                  <h3 className="serif" style={{ fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 400, color: "#F3ECE4" }}>{v.label}</h3>
                   <p className="v-desc-mobile">{v.desc}</p>
                 </div>
                 <p className="v-desc-desk">{v.desc}</p>
@@ -739,27 +760,27 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── BLOOM WELLNESS PERSONALITY QUIZ ────────────── */}
-      <section id="quiz" className="sp" style={{ background: "#f7f3ef" }}>
+      <section id="quiz" className="sp" style={{ background: "#F3ECE4" }}>
         <div className="wrap">
           <div style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
-            <p style={{ letterSpacing: "0.35em", textTransform: "uppercase", fontSize: 12, color: "#6b8c72", marginBottom: 20 }}>
+            <p style={{ letterSpacing: "0.35em", textTransform: "uppercase", fontSize: 12, color: "#7A8766", marginBottom: 20 }}>
               Wellness Experience
             </p>
 
-            <h2 className="serif sh" style={{ color: "#2a1f1f", marginBottom: 24 }}>
+            <h2 className="serif sh" style={{ color: "#4E403A", marginBottom: 24 }}>
               What Kind of <em>Bloom Are You?</em> 🌸
             </h2>
 
-            <p style={{ color: "#6b5555", fontSize: 17, lineHeight: 1.8, maxWidth: 640, margin: "0 auto 56px" }}>
+            <p style={{ color: "#5A4D47", fontSize: 17, lineHeight: 1.8, maxWidth: 640, margin: "0 auto 56px" }}>
               No pressure. No wrong answers.
               Just a soft little moment for yourself.
             </p>
 
             {!quizStarted && !quizResult && (
-              <div style={{ background: "#fff", borderRadius: 32, padding: "48px 32px", boxShadow: "0 8px 32px rgba(181,96,106,0.07)", border: "1px solid #ece7e2", animation: "fadeIn 0.4s ease" }}>
+              <div style={{ background: "#fff", borderRadius: 32, padding: "48px 32px", boxShadow: "0 8px 32px rgba(190,110,120,0.07)", border: "1px solid #ece7e2", animation: "fadeIn 0.4s ease" }}>
                 <div style={{ fontSize: 64, marginBottom: 24 }}>🌸</div>
-                <p className="serif" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 300, color: "#2a1f1f", marginBottom: 12 }}>No pressure. No wrong answers.</p>
-                <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.8, maxWidth: 520, margin: "0 auto 32px" }}>
+                <p className="serif" style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 300, color: "#4E403A", marginBottom: 12 }}>No pressure. No wrong answers.</p>
+                <p style={{ color: "#5A4D47", fontSize: 15, lineHeight: 1.8, maxWidth: 520, margin: "0 auto 32px" }}>
                   Just a soft little moment of reflection — to remind you who you already are.
                 </p>
                 <button onClick={() => setQuizStarted(true)} className="pill-btn pill-rose" style={{ fontSize: 14, padding: "16px 40px" }}>
@@ -769,26 +790,26 @@ export default function BloomWebsite() {
             )}
 
             {quizStarted && !quizResult && (
-              <div style={{ background: "#fff", borderRadius: 32, padding: "36px 32px", boxShadow: "0 8px 32px rgba(181,96,106,0.07)", border: "1px solid #ece7e2", textAlign: "left", animation: "fadeUp 0.4s ease" }}>
+              <div style={{ background: "#fff", borderRadius: 32, padding: "36px 32px", boxShadow: "0 8px 32px rgba(190,110,120,0.07)", border: "1px solid #ece7e2", textAlign: "left", animation: "fadeUp 0.4s ease" }}>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, marginBottom: 32 }}>
                   <span style={{ fontSize: 13, letterSpacing: "0.25em", textTransform: "uppercase", color: "#9a8f8a" }}>
                     0{quizIndex + 1} — 05
                   </span>
-                  <div style={{ width: 160, height: 3, background: "#e8ddd8", borderRadius: 100, overflow: "hidden" }}>
-                    <div style={{ height: "100%", width: `${((quizIndex + 1) / bloomQuestions.length) * 100}%`, background: "#b5606a", transition: "width 0.5s ease" }} />
+                  <div style={{ width: 160, height: 3, background: "#E8DDD1", borderRadius: 100, overflow: "hidden" }}>
+                    <div style={{ height: "100%", width: `${((quizIndex + 1) / bloomQuestions.length) * 100}%`, background: "#BE6E78", transition: "width 0.5s ease" }} />
                   </div>
                 </div>
 
                 <div style={{ textAlign: "center", fontSize: 48, marginBottom: 16 }}>{bloomQuestions[quizIndex].emoji}</div>
 
-                <h3 className="serif" style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 400, color: "#2a1f1f", lineHeight: 1.2, marginBottom: 32, textAlign: "center" }}>
+                <h3 className="serif" style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 400, color: "#4E403A", lineHeight: 1.2, marginBottom: 32, textAlign: "center" }}>
                   {bloomQuestions[quizIndex].question}
                 </h3>
 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                   {bloomQuestions[quizIndex].options.map((option, index) => (
                     <button key={index} className="quiz-option" onClick={() => handleBloomAnswer(option.value)}>
-                      <span style={{ color: "#b5606a", marginRight: 12, fontWeight: 500, fontSize: 12, letterSpacing: "0.1em" }}>0{index + 1}</span>
+                      <span style={{ color: "#BE6E78", marginRight: 12, fontWeight: 500, fontSize: 12, letterSpacing: "0.1em" }}>0{index + 1}</span>
                       {option.text}
                     </button>
                   ))}
@@ -797,41 +818,41 @@ export default function BloomWebsite() {
             )}
 
             {quizResult && (
-              <div style={{ background: "#fff", borderRadius: 32, padding: "48px 32px 44px", boxShadow: "0 16px 56px rgba(181,96,106,0.1)", border: "1px solid rgba(181,96,106,0.1)", animation: "fadeUp 0.5s ease" }}>
+              <div style={{ background: "#fff", borderRadius: 32, padding: "48px 32px 44px", boxShadow: "0 16px 56px rgba(190,110,120,0.1)", border: "1px solid rgba(190,110,120,0.1)", animation: "fadeUp 0.5s ease" }}>
 
                 {/* 1. AFFIRMATION */}
                 <div style={{ background: "linear-gradient(135deg, #f5e6e8 0%, #ede8e3 100%)", borderRadius: 24, padding: "32px 28px", marginBottom: 36, position: "relative", overflow: "hidden" }}>
-                  <div style={{ fontSize: 64, color: "#b5606a", lineHeight: 0.8, fontFamily: "Georgia, serif", marginBottom: 12, opacity: 0.4, position: "absolute", top: 16, left: 20 }}>“</div>
-                  <p className="serif" style={{ fontSize: "clamp(22px, 3.8vw, 34px)", fontWeight: 300, fontStyle: "italic", color: "#2a1f1f", lineHeight: 1.55, paddingTop: 20, position: "relative", zIndex: 1 }}>
+                  <div style={{ fontSize: 64, color: "#BE6E78", lineHeight: 0.8, fontFamily: "Georgia, serif", marginBottom: 12, opacity: 0.4, position: "absolute", top: 16, left: 20 }}>“</div>
+                  <p className="serif" style={{ fontSize: "clamp(22px, 3.8vw, 34px)", fontWeight: 300, fontStyle: "italic", color: "#4E403A", lineHeight: 1.55, paddingTop: 20, position: "relative", zIndex: 1 }}>
                     {quizResult.affirmation}
                   </p>
                 </div>
 
                 {/* 2. RESULT TITLE */}
-                <h3 className="serif" style={{ fontSize: "clamp(28px, 4.5vw, 46px)", fontWeight: 300, color: "#2a1f1f", lineHeight: 1.1, marginBottom: 28, letterSpacing: "-0.01em" }}>
+                <h3 className="serif" style={{ fontSize: "clamp(28px, 4.5vw, 46px)", fontWeight: 300, color: "#4E403A", lineHeight: 1.1, marginBottom: 28, letterSpacing: "-0.01em" }}>
                   You’re {quizResult.title} <span style={{ fontStyle: "normal" }}>{quizResult.emoji}</span>
                 </h3>
 
                 {/* 3. YOUR ENERGY LATELY */}
                 <div style={{ marginBottom: 28 }}>
-                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#b5606a", marginBottom: 12, fontWeight: 400 }}>Your energy lately</p>
-                  <p style={{ color: "#6b5555", fontSize: 16, lineHeight: 1.85, maxWidth: 580, margin: "0 auto" }}>
+                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#BE6E78", marginBottom: 12, fontWeight: 400 }}>Your energy lately</p>
+                  <p style={{ color: "#5A4D47", fontSize: 16, lineHeight: 1.85, maxWidth: 580, margin: "0 auto" }}>
                     {quizResult.energy}
                   </p>
                 </div>
 
-                <div style={{ width: 40, height: 1, background: "rgba(181,96,106,0.3)", margin: "0 auto 28px", borderRadius: 2 }} />
+                <div style={{ width: 40, height: 1, background: "rgba(190,110,120,0.3)", margin: "0 auto 28px", borderRadius: 2 }} />
 
                 {/* 4. TINY RITUAL */}
-                <div style={{ background: "#f7f3ef", borderRadius: 20, padding: "24px", marginBottom: 24, textAlign: "left" }}>
-                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#6b8c72", marginBottom: 10, fontWeight: 400 }}>A Small Ritual</p>
-                  <p style={{ color: "#2a1f1f", fontSize: 15, lineHeight: 1.75 }}>{quizResult.ritual}</p>
+                <div style={{ background: "#E8DDD1", borderRadius: 20, padding: "24px 26px", marginBottom: 24, textAlign: "left" }}>
+                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#7A8766", marginBottom: 10, fontWeight: 400 }}>A Small Ritual</p>
+                  <p style={{ color: "#4E403A", fontSize: 15, lineHeight: 1.75 }}>{quizResult.ritual}</p>
                 </div>
 
                 {/* 5. JOURNAL PROMPT */}
-                <div style={{ borderLeft: "2px solid #b5606a", paddingLeft: 20, marginBottom: 40, textAlign: "left" }}>
-                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#b5606a", marginBottom: 8, fontWeight: 400 }}>A Quiet Question</p>
-                  <p className="serif" style={{ color: "#6b5555", fontSize: 18, fontStyle: "italic", lineHeight: 1.6, fontWeight: 300 }}>"{quizResult.prompt}"</p>
+                <div style={{ borderLeft: "2px solid #BE6E78", paddingLeft: 20, marginBottom: 40, textAlign: "left" }}>
+                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#BE6E78", marginBottom: 8, fontWeight: 400 }}>A Quiet Question</p>
+                  <p className="serif" style={{ color: "#5A4D47", fontSize: 18, fontStyle: "italic", lineHeight: 1.6, fontWeight: 300 }}>"{quizResult.prompt}"</p>
                 </div>
 
                 <p style={{ fontSize: 11, color: "#9a8f8a", opacity: 0.65, marginBottom: 18, letterSpacing: "0.04em" }}>
@@ -866,7 +887,7 @@ export default function BloomWebsite() {
               <h2 className="serif sh" style={{ marginBottom: 20 }}>
                 Partnering With<br />Organizations to<br /><em>Cultivate Thriving Teams</em>
               </h2>
-              <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.85, marginBottom: 32 }}>
+              <p style={{ color: "#5A4D47", fontSize: 15, lineHeight: 1.85, marginBottom: 32 }}>
                 Bloom & Co partners with organizations to support employee wellness and workplace engagement through practical and intentional wellness solutions. We serve corporates, NGOs, educational institutions, insurance companies, hospitality brands, and HR departments.
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -874,13 +895,13 @@ export default function BloomWebsite() {
               </div>
             </div>
             <div>
-              <p style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.05em", marginBottom: 18, color: "#2a1f1f" }}>
+              <p style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.05em", marginBottom: 18, color: "#4E403A" }}>
                 Our offerings include:
               </p>
               <div className="offerings-grid">
                 {corporateOfferings.map((offer, i) => (
-                  <div key={i} style={{ background: "#f5e6e8", borderRadius: 12, padding: "13px 16px", fontSize: 13, color: "#6b5555", lineHeight: 1.5 }}>
-                    <span style={{ color: "#b5606a", marginRight: 8 }}>✓</span>{offer}
+                  <div key={i} style={{ background: "#EDD8DA", borderRadius: 12, padding: "14px 16px", fontSize: 13, color: "#5A4D47", lineHeight: 1.5 }}>
+                    <span style={{ color: "#BE6E78", marginRight: 8 }}>✓</span>{offer}
                   </div>
                 ))}
               </div>
@@ -890,7 +911,7 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── WHY BLOOM ─────────────────────────────────── */}
-      <section className="sp" style={{ background: "#f7f3ef" }}>
+      <section className="sp" style={{ background: "#F3ECE4" }}>
         <div className="wrap">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <span className="label">Why Choose Us</span>
@@ -899,13 +920,13 @@ export default function BloomWebsite() {
           <div className="why-grid">
             {whyUs.map((item, i) => (
               <div key={i} className="w-card">
-                <span className="serif" style={{ fontSize: 44, color: "#f5e6e8", fontWeight: 300, lineHeight: 1, display: "block", marginBottom: 12 }}>0{i + 1}</span>
+                <span className="serif" style={{ fontSize: 44, color: "#E8DDD1", fontWeight: 300, lineHeight: 1, display: "block", marginBottom: 12 }}>0{i + 1}</span>
                 <h3 className="serif" style={{ fontSize: 21, fontWeight: 400, marginBottom: 10, lineHeight: 1.2 }}>{item.title}</h3>
-                <div style={{ width: 32, height: 2, background: "#b5606a", marginBottom: 12, borderRadius: 2 }} />
-                <p style={{ color: "#6b5555", fontSize: 14, lineHeight: 1.75 }}>{item.text}</p>
+                <div style={{ width: 32, height: 2, background: "#BE6E78", marginBottom: 12, borderRadius: 2 }} />
+                <p style={{ color: "#5A4D47", fontSize: 14, lineHeight: 1.75 }}>{item.text}</p>
               </div>
             ))}
-            <div style={{ background: "#b5606a", color: "#fff", borderRadius: 22, padding: "28px", display: "flex", flexDirection: "column", gap: 16 }}>
+            <div style={{ background: "#BE6E78", color: "#fff", borderRadius: 22, padding: "28px", display: "flex", flexDirection: "column", gap: 16 }}>
               <span className="serif" style={{ fontSize: 44, color: "rgba(255,255,255,0.2)", fontWeight: 300, lineHeight: 1, display: "block" }}>05</span>
               <div>
                 <h3 className="serif" style={{ fontSize: 21, fontWeight: 400, marginBottom: 10, color: "#fff" }}>Authentic Brand Story</h3>
@@ -923,29 +944,31 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── FOUNDER MOMENT ────────────────────────────── */}
-      <section style={{ background: "linear-gradient(135deg, #2a1f1f 0%, #3d2a2a 100%)", padding: "80px 0" }}>
+      <section style={{ background: "linear-gradient(135deg, #4E403A 0%, #3d2a2a 100%)", padding: "80px 0" }}>
         <div className="wrap">
           <div className="founder-grid">
             {/* photo */}
             <div style={{ borderRadius: 32, overflow: "hidden", aspectRatio: "4/5", position: "relative", boxShadow: "0 32px 80px rgba(0,0,0,0.3)" }}>
-              <div className="img-placeholder" style={{ position: "absolute", inset: 0 }}>
-                <span style={{ fontSize: 48 }}>👩🏾</span>
-                <span style={{ color: "#e8b4b8", fontWeight: 500 }}>FRIDAH'S PHOTO</span>
-                <span style={{ color: "rgba(255,255,255,0.4)", maxWidth: 200, lineHeight: 1.5 }}>Portrait of Fridah — warm, confident, natural setting</span>
-              </div>
+              <Image
+                src="/founder.png"
+                alt="Fridah Nairuti — Founder of Bloom & Co"
+                fill
+                sizes="(max-width: 860px) 100vw, 50vw"
+                style={{ objectFit: "cover", objectPosition: "top center" }}
+              />
             </div>
             {/* quote */}
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#e8b4b8", marginBottom: 24 }}>A Word From Our Founder</span>
-              <div style={{ fontSize: 80, color: "#b5606a", lineHeight: 0.8, fontFamily: "Georgia, serif", marginBottom: 16, opacity: 0.6 }}>"</div>
-              <blockquote className="serif" style={{ fontSize: "clamp(20px, 3vw, 32px)", fontWeight: 300, lineHeight: 1.5, color: "#f7f3ef", fontStyle: "italic", marginBottom: 32 }}>
+              <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#E8B4B8", marginBottom: 24 }}>A Word From Our Founder</span>
+              <div style={{ fontSize: 80, color: "#BE6E78", lineHeight: 0.8, fontFamily: "Georgia, serif", marginBottom: 16, opacity: 0.6 }}>"</div>
+              <blockquote className="serif" style={{ fontSize: "clamp(20px, 3vw, 32px)", fontWeight: 300, lineHeight: 1.5, color: "#F3ECE4", fontStyle: "italic", marginBottom: 32 }}>
                 At Bloom & Co, we believe people thrive when wellness and productivity exist in balance. Through intentional products and meaningful partnerships, we are committed to helping individuals and organizations cultivate healthier, more fulfilling lives.
               </blockquote>
               <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                <div style={{ width: 48, height: 48, borderRadius: "50%", background: "#b5606a", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>FN</div>
+                <div style={{ width: 48, height: 48, borderRadius: "50%", background: "#BE6E78", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>FN</div>
                 <div>
-                  <p style={{ color: "#f7f3ef", fontSize: 15, fontWeight: 500 }}>Fridah Nairuti</p>
-                  <p style={{ color: "#e8b4b8", fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase" }}>Founder, Bloom & Co</p>
+                  <p style={{ color: "#F3ECE4", fontSize: 15, fontWeight: 500 }}>Fridah Nairuti</p>
+                  <p style={{ color: "#E8B4B8", fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase" }}>Founder, Bloom & Co</p>
                 </div>
               </div>
             </div>
@@ -954,11 +977,11 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── INSTAGRAM FOLLOW ──────────────────────────── */}
-      <section className="sp" style={{ background: "#f7f3ef" }}>
+      <section className="sp" style={{ background: "#F3ECE4" }}>
         <div className="wrap" style={{ textAlign: "center" }}>
           <span className="label">Follow Along</span>
           <h2 className="serif sh" style={{ marginBottom: 16 }}>Join Us on<br /><em>Instagram</em></h2>
-          <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.8, maxWidth: 480, margin: "0 auto 32px" }}>
+          <p style={{ color: "#5A4D47", fontSize: 15, lineHeight: 1.8, maxWidth: 480, margin: "0 auto 32px" }}>
             Daily wellness tips, product launches, and behind-the-scenes moments from Bloom & Co. Follow us at @bloomco.ke.
           </p>
           {/* instagram preview grid placeholder */}
@@ -970,7 +993,7 @@ export default function BloomWebsite() {
                 onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
               >
                 <span style={{ fontSize: 24 }}>📸</span>
-                <span style={{ fontSize: 9, color: "#b5606a", textAlign: "center", padding: "0 8px", letterSpacing: "0.05em" }}>{desc}</span>
+                <span style={{ fontSize: 9, color: "#BE6E78", textAlign: "center", padding: "0 8px", letterSpacing: "0.05em" }}>{desc}</span>
               </a>
             ))}
           </div>
@@ -981,7 +1004,7 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── CONTACT ───────────────────────────────────── */}
-      <section id="contact" className="sp" style={{ background: "#f7f3ef" }}>
+      <section id="contact" className="sp" style={{ background: "#F3ECE4" }}>
         <div className="wrap">
           <div className="contact-grid">
             <div>
@@ -989,27 +1012,27 @@ export default function BloomWebsite() {
               <h2 className="serif sh" style={{ marginBottom: 24, lineHeight: 1.05 }}>
                 Let's Build<br /><em>Something Together</em>
               </h2>
-              <p style={{ color: "#6b5555", fontSize: 16, lineHeight: 1.9, maxWidth: 520 }}>
+              <p style={{ color: "#5A4D47", fontSize: 16, lineHeight: 1.9, maxWidth: 520 }}>
                 Whether you're an individual seeking intentional wellness tools, or an organization looking to cultivate a thriving team — we'd love to connect.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {contactItems.map((item) => (
-                <div key={item.label} style={{ background: "rgba(255,255,255,0.85)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)", borderRadius: 26, padding: "22px 26px", display: "flex", alignItems: "center", gap: 20, boxShadow: "0 8px 32px rgba(181,96,106,0.07)", transition: "all 0.35s ease", border: "1px solid rgba(181,96,106,0.1)" }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 20px 52px rgba(181,96,106,0.12)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(181,96,106,0.07)"; }}
+                <div key={item.label} style={{ background: "rgba(255,255,255,0.85)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)", borderRadius: 26, padding: "22px 26px", display: "flex", alignItems: "center", gap: 20, boxShadow: "0 8px 32px rgba(190,110,120,0.07)", transition: "all 0.35s ease", border: "1px solid rgba(190,110,120,0.1)" }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 20px 52px rgba(190,110,120,0.12)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(190,110,120,0.07)"; }}
                 >
-                  <div style={{ width: 50, height: 50, borderRadius: "50%", background: "#f5e6e8", display: "flex", alignItems: "center", justifyContent: "center", color: "#b5606a", flexShrink: 0, fontSize: 20 }}>
+                  <div style={{ width: 50, height: 50, borderRadius: "50%", background: "#EDD8DA", display: "flex", alignItems: "center", justifyContent: "center", color: "#BE6E78", flexShrink: 0, fontSize: 20 }}>
                     {item.icon}
                   </div>
                   <div>
-                    <p style={{ fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase", color: "#b5606a", marginBottom: 5 }}>{item.label}</p>
+                    <p style={{ fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase", color: "#BE6E78", marginBottom: 5 }}>{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} style={{ fontSize: 15, color: "#2a1f1f", textDecoration: "none" }}>
+                      <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} style={{ fontSize: 15, color: "#4E403A", textDecoration: "none" }}>
                         {item.value}
                       </a>
                     ) : (
-                      <span style={{ fontSize: 15, color: "#2a1f1f" }}>{item.value}</span>
+                      <span style={{ fontSize: 15, color: "#4E403A" }}>{item.value}</span>
                     )}
                   </div>
                 </div>
@@ -1023,12 +1046,12 @@ export default function BloomWebsite() {
       </section>
 
       {/* ── FOOTER ────────────────────────────────────── */}
-      <footer style={{ borderTop: "1px solid rgba(181,96,106,0.15)", padding: "36px 20px 80px", background: "#2a1f1f" }}>
+      <footer style={{ borderTop: "1px solid rgba(190,110,120,0.15)", padding: "36px 20px 80px", background: "#4E403A" }}>
         <div className="wrap">
           <div className="footer-inner">
             <div>
               <Image src="/logo.png" alt="Bloom & Co Nairobi Kenya" width={110} height={44} style={{ height: 34, width: "auto" }} />
-              <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 11, marginTop: 8, letterSpacing: "0.05em" }}>Wellness · Productivity · Intentional Living</p>
+              <p style={{ color: "rgba(255,255,255,0.35)", fontSize: 11, marginTop: 8, letterSpacing: "0.05em" }}>Wellness · Productivity · Intentional Living</p>
             </div>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>© 2026 Bloom & Co · Nairobi, Kenya</p>
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap", justifyContent: "center" }}>
@@ -1039,9 +1062,9 @@ export default function BloomWebsite() {
                 { label: "Email", href: "mailto:bloomandco@gmail.com" },
               ].map((l) => (
                 <a key={l.label} href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  style={{ color: "#e8b4b8", fontSize: 13, textDecoration: "none", transition: "color 0.2s" }}
+                  style={{ color: "#E8B4B8", fontSize: 13, textDecoration: "none", transition: "color 0.2s" }}
                   onMouseEnter={e => e.currentTarget.style.color = "#fff"}
-                  onMouseLeave={e => e.currentTarget.style.color = "#e8b4b8"}>
+                  onMouseLeave={e => e.currentTarget.style.color = "#E8B4B8"}>
                   {l.label}
                 </a>
               ))}

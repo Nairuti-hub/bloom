@@ -50,7 +50,7 @@ export const metadata = {
       "Intentional wellness tools for individuals and organizations across Africa. Journals, guides, devotionals, and kids coloring books designed with purpose.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/OG.png",
         width: 1200,
         height: 630,
         alt: "Bloom & Co — Where Wellness Meets Purpose",
@@ -62,16 +62,16 @@ export const metadata = {
     title: "Bloom & Co | Wellness Journals & Productivity Guides",
     description:
       "Intentional wellness tools for individuals and organizations across Africa.",
-    images: ["/og-image.jpg"],
+    images: ["/OG.png"],
     creator: "@bloomco_ke",
   },
   alternates: {
     canonical: "https://www.bloomandco.co.ke",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   manifest: "/site.webmanifest",
   verification: {
