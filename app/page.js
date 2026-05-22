@@ -499,7 +499,8 @@ export default function BloomWebsite() {
               </p>
               <div className="hero-btns">
                 <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose" style={{ animationDelay: "0.9s" }}>Explore Products</a>
-                <a href="#corporate" className="pill-btn pill-outline-rose" style={{ animationDelay: "1.0s" }}>Partner With Us</a>
+                <a href="#quiz" className="pill-btn pill-outline-rose" style={{ animationDelay: "1.0s" }}>Discover Your Bloom Energy</a>
+                <a href="#corporate" className="pill-btn pill-outline-rose" style={{ animationDelay: "1.1s" }}>Partner With Us</a>
               </div>
             </div>
             <div className="hero-img" style={{ transform: "translateZ(0)" }}>
