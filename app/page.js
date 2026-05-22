@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable react/no-unescaped-entities */
+
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Mail, Phone, MapPin, ShoppingBag } from "lucide-react";
@@ -119,49 +121,81 @@ const whyUs = [
   { title: "Flexible Partnerships", text: "Customizable wellness solutions tailored to different organizational needs and employee engagement initiatives." },
 ];
 
-// ── QUIZ DATA ───────────────────────────────────────────────
-const quizQuestions = [
+// ── BLOOM ENERGY QUIZ DATA ───────────────────────────────
+const bloomQuestions = [
   {
-    q: "How does your daily life feel right now?",
+    question: "Your ideal slow Sunday looks like…",
     options: [
-      { text: "Overwhelmed & burnt out", value: "burnout" },
-      { text: "Busy but losing focus", value: "focus" },
-      { text: "Disconnected from myself", value: "cycle" },
-      { text: "Seeking spiritual grounding", value: "devotion" },
+      { text: "Coffee & journaling ☕", value: "cultivator" },
+      { text: "Long walk outdoors 🌿", value: "grounded" },
+      { text: "Creative hobby time 🎨", value: "creator" },
+      { text: "Sleeping guilt-free ☁️", value: "restoring" },
     ],
   },
   {
-    q: "Who are you shopping for?",
+    question: "What restores your energy the fastest?",
     options: [
-      { text: "Myself — I need this", value: "self" },
-      { text: "My team or workplace", value: "corporate" },
-      { text: "My child", value: "kids" },
-      { text: "A gift for someone special", value: "gift" },
+      { text: "Quiet alone time 🌙", value: "cultivator" },
+      { text: "Deep conversation 🤍", value: "dreamer" },
+      { text: "Nature & fresh air 🍃", value: "grounded" },
+      { text: "Music, books, or art 📖", value: "creator" },
     ],
   },
   {
-    q: "What would feel most meaningful right now?",
+    question: "Choose a wellness ritual.",
     options: [
-      { text: "A quiet moment just for me", value: "quiet" },
-      { text: "Better performance at work", value: "perform" },
-      { text: "Understanding my body better", value: "body" },
-      { text: "Creative, screen-free time", value: "creative" },
+      { text: "Morning affirmations ✨", value: "dreamer" },
+      { text: "Stretching & movement 🧘", value: "grounded" },
+      { text: "Evening reflection 📓", value: "cultivator" },
+      { text: "Digital detox 📵", value: "restoring" },
+    ],
+  },
+  {
+    question: "Your current energy feels…",
+    options: [
+      { text: "Calm but tired ☁️", value: "restoring" },
+      { text: "Motivated but overwhelmed 🔥", value: "cultivator" },
+      { text: "Hopeful & growing 🌱", value: "dreamer" },
+      { text: "Emotionally stretched 🌊", value: "creator" },
+    ],
+  },
+  {
+    question: "Pick a flower.",
+    options: [
+      { text: "Rose 🌹", value: "dreamer" },
+      { text: "Sage 🌿", value: "cultivator" },
+      { text: "Peony 🌸", value: "creator" },
+      { text: "Sunflower 🌻", value: "grounded" },
     ],
   },
 ];
 
-const quizResults = {
-  burnout: { title: "Corporate Wellness Journal", desc: "30 days of gentle structure to help you show up without burning out.", icon: "📓" },
-  focus: { title: "Well-being & Productivity Guide", desc: "A guide to working smarter, calmer, and more sustainably.", icon: "📘" },
-  cycle: { title: "Flow With Your Cycle", desc: "Stop forcing. Start flowing. Work with your body, not against it.", icon: "🌸" },
-  devotion: { title: "Daily Devotional Workbook", desc: "A sacred space for prayer, reflection, and quiet time with God.", icon: "🙏" },
-  corporate: { title: "Corporate Wellness Journal", desc: "The perfect tool for teams who want to perform and feel well.", icon: "📓" },
-  kids: { title: "Kids Affirmation Coloring E-Book", desc: "Build your child's confidence through color and positive words.", icon: "🦕" },
-  gift: { title: "Daily Devotional Workbook", desc: "Give her more than a gift — give her time with herself.", icon: "🙏" },
-  quiet: { title: "Floral Coloring Book for Adults", desc: "No pressure. No perfection. Just quiet, creative moments.", icon: "🎨" },
-  perform: { title: "Well-being & Productivity Guide", desc: "Well-being isn't a reward. It's the foundation of sustainable work.", icon: "📘" },
-  body: { title: "Flow With Your Cycle", desc: "Align your energy, work, and life with your natural rhythm.", icon: "🌸" },
-  creative: { title: '"Quiet Time" Coloring for Kids', desc: "Fun, calm, screen-free creativity for your little ones.", icon: "🦒" },
+const bloomResults = {
+  cultivator: {
+    title: "The Quiet Cultivator 🌿",
+    desc: "You grow best in calm spaces, intentional routines, and moments of quiet reflection. You value emotional balance, meaningful rest, and gentle progress over constant hustle.",
+    affirmation: "Your softness is not weakness. It is wisdom.",
+  },
+  grounded: {
+    title: "The Grounded Bloom ☀️",
+    desc: "You feel most alive when you're connected to your body, your environment, and the present moment. You thrive through simplicity, movement, and balance.",
+    affirmation: "Slow growth is still growth.",
+  },
+  creator: {
+    title: "The Gentle Creator 🎨",
+    desc: "You process life through beauty, creativity, emotion, and expression. You need space to feel inspired, not pressured.",
+    affirmation: "Your creativity deserves room to breathe.",
+  },
+  dreamer: {
+    title: "The Intentional Dreamer ✨",
+    desc: "You are hopeful, reflective, and purpose-driven. You crave meaningful living and are constantly becoming a softer, wiser version of yourself.",
+    affirmation: "You are allowed to bloom gently.",
+  },
+  restoring: {
+    title: "The Restoring Soul 🌙",
+    desc: "Your energy needs restoration, calm, and self-compassion. You thrive when you stop forcing and allow yourself to pause.",
+    affirmation: "Rest is productive too.",
+  },
 };
 
 // ── PEEK INSIDE DATA ────────────────────────────────────────
@@ -193,7 +227,8 @@ function useInView(threshold = 0.15) {
 export default function BloomWebsite() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productTab, setProductTab] = useState("wellness");
-  const [quizStep, setQuizStep] = useState(0); // 0=intro, 1-3=questions, 4=result
+  const [quizStarted, setQuizStarted] = useState(false);
+  const [quizIndex, setQuizIndex] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState([]);
   const [quizResult, setQuizResult] = useState(null);
   const [heroVisible, setHeroVisible] = useState(false);
@@ -204,20 +239,34 @@ export default function BloomWebsite() {
     return () => clearTimeout(t);
   }, []);
 
-  const handleQuizAnswer = (value) => {
-    const newAnswers = [...quizAnswers, value];
-    if (newAnswers.length === quizQuestions.length) {
-      // pick result: first answer is weighted most
-      const result = quizResults[newAnswers[0]] || quizResults["burnout"];
-      setQuizResult(result);
-      setQuizStep(4);
-    } else {
-      setQuizAnswers(newAnswers);
-      setQuizStep(quizStep + 1);
+  const handleBloomAnswer = (value) => {
+    const updatedAnswers = [...quizAnswers, value];
+    setQuizAnswers(updatedAnswers);
+
+    if (quizIndex < bloomQuestions.length - 1) {
+      setQuizIndex(quizIndex + 1);
+      return;
     }
+
+    const counts = {};
+
+    updatedAnswers.forEach((answer) => {
+      counts[answer] = (counts[answer] || 0) + 1;
+    });
+
+    const topResult = Object.keys(counts).reduce((a, b) =>
+      counts[a] > counts[b] ? a : b
+    );
+
+    setQuizResult(bloomResults[topResult]);
   };
 
-  const resetQuiz = () => { setQuizStep(0); setQuizAnswers([]); setQuizResult(null); };
+  const resetQuiz = () => {
+    setQuizStarted(false);
+    setQuizIndex(0);
+    setQuizAnswers([]);
+    setQuizResult(null);
+  };
 
   const contactItems = [
     { label: "Instagram", value: "@bloomco.ke",          icon: "📸",                href: INSTAGRAM_URL },
@@ -628,80 +677,6 @@ export default function BloomWebsite() {
         </div>
       </section>
 
-      {/* ── BLOOM INTO YOURSELF QUIZ ───────────────────── */}
-      <section id="quiz" className="sp" style={{ background: "#f5e6e8" }}>
-        <div className="wrap">
-          <div style={{ maxWidth: 640, margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: 40 }}>
-              <span className="label">Find Your Match</span>
-              <h2 className="serif sh">
-                Bloom Into<br /><em>Yourself</em>
-              </h2>
-              <p style={{ color: "#6b5555", fontSize: 15, marginTop: 12, lineHeight: 1.8 }}>
-                Answer 3 quick questions and we'll recommend the perfect Bloom & Co product for you.
-              </p>
-            </div>
-
-            {/* INTRO */}
-            {quizStep === 0 && (
-              <div style={{ textAlign: "center", animation: "fadeIn 0.4s ease" }}>
-                <div style={{ fontSize: 72, marginBottom: 24 }}>🌸</div>
-                <button onClick={() => setQuizStep(1)} className="pill-btn pill-rose" style={{ fontSize: 15, padding: "16px 40px" }}>
-                  Start the Quiz
-                </button>
-              </div>
-            )}
-
-            {/* QUESTIONS */}
-            {quizStep >= 1 && quizStep <= 3 && (
-              <div style={{ animation: "fadeUp 0.4s ease" }}>
-                {/* progress */}
-                <div style={{ display: "flex", gap: 6, marginBottom: 32 }}>
-                  {[1, 2, 3].map(n => (
-                    <div key={n} style={{ flex: 1, height: 3, borderRadius: 100, background: n <= quizStep ? "#b5606a" : "rgba(181,96,106,0.2)", transition: "background 0.3s ease" }} />
-                  ))}
-                </div>
-                <p style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "#b5606a", marginBottom: 16 }}>
-                  Question {quizStep} of 3
-                </p>
-                <h3 className="serif" style={{ fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 400, marginBottom: 28, color: "#2a1f1f", lineHeight: 1.2 }}>
-                  {quizQuestions[quizStep - 1].q}
-                </h3>
-                <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                  {quizQuestions[quizStep - 1].options.map((opt, i) => (
-                    <button key={i} className="quiz-option" onClick={() => handleQuizAnswer(opt.value)}>
-                      <span style={{ color: "#b5606a", marginRight: 10, fontWeight: 500 }}>0{i + 1}</span>
-                      {opt.text}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* RESULT */}
-            {quizStep === 4 && quizResult && (
-              <div style={{ textAlign: "center", animation: "fadeUp 0.5s ease", background: "#fff", borderRadius: 28, padding: "40px 32px", boxShadow: "0 16px 48px rgba(181,96,106,0.12)" }}>
-                <div style={{ fontSize: 64, marginBottom: 16 }}>{quizResult.icon}</div>
-                <p style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "#b5606a", marginBottom: 12 }}>
-                  Your Perfect Match
-                </p>
-                <h3 className="serif" style={{ fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 400, color: "#2a1f1f", marginBottom: 14, lineHeight: 1.1 }}>
-                  {quizResult.title}
-                </h3>
-                <div style={{ width: 40, height: 2, background: "#b5606a", margin: "0 auto 16px", borderRadius: 2 }} />
-                <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.8, marginBottom: 28, maxWidth: 400, margin: "0 auto 28px" }}>
-                  {quizResult.desc}
-                </p>
-                <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-                  <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose">Get Your Copy</a>
-                  <button onClick={resetQuiz} className="pill-btn pill-outline-rose">Try Again</button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* ── CORE VALUES ───────────────────────────────── */}
       <section id="values" className="sp" style={{ background: "#2a1f1f", color: "#f7f3ef" }}>
         <div className="wrap">
@@ -725,6 +700,106 @@ export default function BloomWebsite() {
                 <p className="v-desc-desk">{v.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── BLOOM ENERGY QUIZ ────────────────────────── */}
+      <section id="quiz" className="sp" style={{ background: "#f7f3ef" }}>
+        <div className="wrap">
+          <div style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
+            <p style={{ letterSpacing: "0.35em", textTransform: "uppercase", fontSize: 12, color: "#6b8c72", marginBottom: 20 }}>
+              Wellness Experience
+            </p>
+
+            <h2 className="serif sh" style={{ color: "#2a1f1f", marginBottom: 24 }}>
+              Discover Your <em>Bloom Energy</em>
+            </h2>
+
+            <p style={{ color: "#6b5555", fontSize: 17, lineHeight: 1.8, maxWidth: 640, margin: "0 auto 56px" }}>
+              A gentle wellness personality experience designed to help you reconnect with the energy, rituals, and rhythms that nourish you most.
+            </p>
+
+            {!quizStarted && !quizResult && (
+              <div style={{ background: "#fff", borderRadius: 32, padding: "40px 32px", boxShadow: "0 8px 32px rgba(181,96,106,0.07)", border: "1px solid #ece7e2", animation: "fadeIn 0.4s ease" }}>
+                <div style={{ fontSize: 64, marginBottom: 24 }}>🌿</div>
+
+                <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.8, maxWidth: 520, margin: "0 auto 32px" }}>
+                  No pressure. No wrong answers. Just a soft little moment for yourself.
+                </p>
+
+                <button onClick={() => setQuizStarted(true)} className="pill-btn pill-rose" style={{ fontSize: 14, padding: "16px 36px" }}>
+                  Start the Experience →
+                </button>
+              </div>
+            )}
+
+            {quizStarted && !quizResult && (
+              <div style={{ background: "#fff", borderRadius: 32, padding: "32px", boxShadow: "0 8px 32px rgba(181,96,106,0.07)", border: "1px solid #ece7e2", textAlign: "left", animation: "fadeUp 0.4s ease" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, marginBottom: 40 }}>
+                  <span style={{ fontSize: 13, letterSpacing: "0.25em", textTransform: "uppercase", color: "#9a948f" }}>
+                    0{quizIndex + 1} — 05
+                  </span>
+
+                  <div style={{ width: 160, height: 3, background: "#efe8e2", borderRadius: 100, overflow: "hidden" }}>
+                    <div
+                      style={{
+                        height: "100%",
+                        width: `${((quizIndex + 1) / bloomQuestions.length) * 100}%`,
+                        background: "#b5606a",
+                        transition: "width 0.5s ease",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <h3 className="serif" style={{ fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 400, color: "#2a1f1f", lineHeight: 1.15, marginBottom: 36 }}>
+                  {bloomQuestions[quizIndex].question}
+                </h3>
+
+                <div style={{ display: "grid", gap: 14 }}>
+                  {bloomQuestions[quizIndex].options.map((option, index) => (
+                    <button key={index} className="quiz-option" onClick={() => handleBloomAnswer(option.value)} style={{ background: "#faf8f5" }}>
+                      <span style={{ color: "#b5606a", marginRight: 12, fontWeight: 500 }}>0{index + 1}</span>
+                      {option.text}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {quizResult && (
+              <div style={{ background: "#fff", borderRadius: 32, padding: "44px 32px", boxShadow: "0 8px 32px rgba(181,96,106,0.07)", border: "1px solid #ece7e2", animation: "fadeUp 0.5s ease" }}>
+                <div style={{ fontSize: 64, marginBottom: 24 }}>✨</div>
+
+                <h3 className="serif" style={{ fontSize: "clamp(32px, 5vw, 50px)", fontWeight: 400, color: "#2a1f1f", lineHeight: 1.1, marginBottom: 24 }}>
+                  {quizResult.title}
+                </h3>
+
+                <p style={{ color: "#6b5555", fontSize: 17, lineHeight: 1.8, maxWidth: 640, margin: "0 auto 32px" }}>
+                  {quizResult.desc}
+                </p>
+
+                <div style={{ background: "#f8f4ef", borderRadius: 20, padding: 24, color: "#7a746f", fontStyle: "italic", maxWidth: 640, margin: "0 auto 40px" }}>
+                  “{quizResult.affirmation}”
+                </div>
+
+                <div style={{ borderTop: "1px solid #eee7e0", paddingTop: 32 }}>
+                  <p style={{ textTransform: "uppercase", letterSpacing: "0.25em", fontSize: 12, color: "#9b958f", marginBottom: 24 }}>
+                    Tools that may support your energy
+                  </p>
+
+                  <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+                    <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-dark">
+                      Explore Wellness Tools →
+                    </a>
+                    <button onClick={resetQuiz} className="pill-btn pill-outline-rose">
+                      Try Again
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
