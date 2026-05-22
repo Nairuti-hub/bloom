@@ -119,810 +119,401 @@ const whyUs = [
   { title: "Flexible Partnerships", text: "Customizable wellness solutions tailored to different organizational needs and employee engagement initiatives." },
 ];
 
-// ── QUIZ DATA ───────────────────────────────────────────────
-const quizQuestions = [
+// ── BLOOM ENERGY QUIZ DATA ───────────────────────────────
+const bloomQuestions = [
   {
-    q: "How does your daily life feel right now?",
+    question: "Your ideal slow Sunday looks like...",
     options: [
-      { text: "Overwhelmed & burnt out", value: "burnout" },
-      { text: "Busy but losing focus", value: "focus" },
-      { text: "Disconnected from myself", value: "cycle" },
-      { text: "Seeking spiritual grounding", value: "devotion" },
+      { text: "Coffee & journaling ☕", value: "cultivator" },
+      { text: "Long walk outdoors 🌿", value: "grounded" },
+      { text: "Creative hobby time 🎨", value: "creator" },
+      { text: "Sleeping guilt-free ☁️", value: "restoring" },
     ],
   },
   {
-    q: "Who are you shopping for?",
+    question: "What restores your energy the fastest?",
     options: [
-      { text: "Myself — I need this", value: "self" },
-      { text: "My team or workplace", value: "corporate" },
-      { text: "My child", value: "kids" },
-      { text: "A gift for someone special", value: "gift" },
+      { text: "Quiet alone time 🌙", value: "cultivator" },
+      { text: "Deep conversation 🤍", value: "dreamer" },
+      { text: "Nature & fresh air 🍃", value: "grounded" },
+      { text: "Music, books, or art 📖", value: "creator" },
     ],
   },
   {
-    q: "What would feel most meaningful right now?",
+    question: "Choose a wellness ritual.",
     options: [
-      { text: "A quiet moment just for me", value: "quiet" },
-      { text: "Better performance at work", value: "perform" },
-      { text: "Understanding my body better", value: "body" },
-      { text: "Creative, screen-free time", value: "creative" },
+      { text: "Morning affirmations ✨", value: "dreamer" },
+      { text: "Stretching & movement 🧘", value: "grounded" },
+      { text: "Evening reflection 📓", value: "cultivator" },
+      { text: "Digital detox 📵", value: "restoring" },
+    ],
+  },
+  {
+    question: "Your current energy feels...",
+    options: [
+      { text: "Calm but tired ☁️", value: "restoring" },
+      { text: "Motivated but overwhelmed 🔥", value: "cultivator" },
+      { text: "Hopeful & growing 🌱", value: "dreamer" },
+      { text: "Emotionally stretched 🌊", value: "creator" },
+    ],
+  },
+  {
+    question: "Pick a flower.",
+    options: [
+      { text: "Rose 🌹", value: "dreamer" },
+      { text: "Sage 🌿", value: "cultivator" },
+      { text: "Peony 🌸", value: "creator" },
+      { text: "Sunflower 🌻", value: "grounded" },
     ],
   },
 ];
 
-const quizResults = {
-  burnout: { title: "Corporate Wellness Journal", desc: "30 days of gentle structure to help you show up without burning out.", icon: "📓" },
-  focus: { title: "Well-being & Productivity Guide", desc: "A guide to working smarter, calmer, and more sustainably.", icon: "📘" },
-  cycle: { title: "Flow With Your Cycle", desc: "Stop forcing. Start flowing. Work with your body, not against it.", icon: "🌸" },
-  devotion: { title: "Daily Devotional Workbook", desc: "A sacred space for prayer, reflection, and quiet time with God.", icon: "🙏" },
-  corporate: { title: "Corporate Wellness Journal", desc: "The perfect tool for teams who want to perform and feel well.", icon: "📓" },
-  kids: { title: "Kids Affirmation Coloring E-Book", desc: "Build your child's confidence through color and positive words.", icon: "🦕" },
-  gift: { title: "Daily Devotional Workbook", desc: "Give her more than a gift — give her time with herself.", icon: "🙏" },
-  quiet: { title: "Floral Coloring Book for Adults", desc: "No pressure. No perfection. Just quiet, creative moments.", icon: "🎨" },
-  perform: { title: "Well-being & Productivity Guide", desc: "Well-being isn't a reward. It's the foundation of sustainable work.", icon: "📘" },
-  body: { title: "Flow With Your Cycle", desc: "Align your energy, work, and life with your natural rhythm.", icon: "🌸" },
-  creative: { title: '"Quiet Time" Coloring for Kids', desc: "Fun, calm, screen-free creativity for your little ones.", icon: "🦒" },
+const bloomResults = {
+  cultivator: {
+    title: "The Quiet Cultivator 🌿",
+    desc: "You grow best in calm spaces, intentional routines, and moments of quiet reflection. You value emotional balance, meaningful rest, and gentle progress over constant hustle.",
+    affirmation: "Your softness is not weakness. It is wisdom.",
+  },
+  grounded: {
+    title: "The Grounded Bloom ☀️",
+    desc: "You feel most alive when you're connected to your body, your environment, and the present moment. You thrive through simplicity, movement, and balance.",
+    affirmation: "Slow growth is still growth.",
+  },
+  creator: {
+    title: "The Gentle Creator 🎨",
+    desc: "You process life through beauty, creativity, emotion, and expression. You need space to feel inspired, not pressured.",
+    affirmation: "Your creativity deserves room to breathe.",
+  },
+  dreamer: {
+    title: "The Intentional Dreamer ✨",
+    desc: "You are hopeful, reflective, and purpose-driven. You crave meaningful living and are constantly becoming a softer, wiser version of yourself.",
+    affirmation: "You are allowed to bloom gently.",
+  },
+  restoring: {
+    title: "The Restoring Soul 🌙",
+    desc: "Your energy needs restoration, calm, and self-compassion. You thrive when you stop forcing and allow yourself to pause.",
+    affirmation: "Rest is productive too.",
+  },
 };
 
-// ── PEEK INSIDE DATA ────────────────────────────────────────
-const peekItems = [
-  { label: "Morning Check-in", desc: "Rate your energy, stress & focus. Choose how you feel: Energized, Grounded, Stretched, or Depleted.", icon: "☀️" },
-  { label: "Daily Themes", desc: "Each weekday carries a theme — productivity, emotional awareness, leadership, energy, and celebration.", icon: "📅" },
-  { label: "Weekly Review", desc: "Rate your week across energy, focus, stress management, work-life balance, team connections, and personal growth.", icon: "📊" },
-  { label: "Wellness Insights", desc: "Weekly articles like 'Recognizing Burnout Before It Catches You' — practical wisdom, not generic advice.", icon: "💡" },
-  { label: "Weekend Reflection", desc: "How did I restore my energy? What am I carrying into next week? What intention do I set ahead?", icon: "🌿" },
-  { label: "Month-End Pulse", desc: "'You made it.' A closing reflection on your greatest achievement, what you learned, and what to leave behind.", icon: "✨" },
-];
-
-// ── USE INTERSECTION OBSERVER HOOK ─────────────────────────
-function useInView(threshold = 0.15) {
-  const ref = useRef(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setInView(true); obs.disconnect(); }
-    }, { threshold });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [threshold]);
-  return [ref, inView];
-}
-
 export default function BloomWebsite() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [productTab, setProductTab] = useState("wellness");
-  const [quizStep, setQuizStep] = useState(0); // 0=intro, 1-3=questions, 4=result
+  const [activeCategory, setActiveCategory] = useState("all");
+  
+  // ── NEW QUIZ STATE ────────────────────────────────────────
+  const [quizStarted, setQuizStarted] = useState(false);
+  const [quizIndex, setQuizIndex] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState([]);
   const [quizResult, setQuizResult] = useState(null);
-  const [heroVisible, setHeroVisible] = useState(false);
-  const [valuesRef, valuesInView] = useInView();
 
   useEffect(() => {
-    const t = setTimeout(() => setHeroVisible(true), 100);
-    return () => clearTimeout(t);
+    // Component mounting configurations if required
   }, []);
 
-  const handleQuizAnswer = (value) => {
-    const newAnswers = [...quizAnswers, value];
-    if (newAnswers.length === quizQuestions.length) {
-      // pick result: first answer is weighted most
-      const result = quizResults[newAnswers[0]] || quizResults["burnout"];
-      setQuizResult(result);
-      setQuizStep(4);
+  // ── QUIZ HANDLER FUNCTIONS ───────────────────────────────
+  const handleBloomAnswer = (value) => {
+    const updatedAnswers = [...quizAnswers, value];
+    setQuizAnswers(updatedAnswers);
+
+    if (quizIndex < bloomQuestions.length - 1) {
+      setQuizIndex(quizIndex + 1);
     } else {
-      setQuizAnswers(newAnswers);
-      setQuizStep(quizStep + 1);
+      const counts = {};
+
+      updatedAnswers.forEach((answer) => {
+        counts[answer] = (counts[answer] || 0) + 1;
+      });
+
+      const topResult = Object.keys(counts).reduce((a, b) =>
+        counts[a] > counts[b] ? a : b
+      );
+
+      setQuizResult(bloomResults[topResult]);
     }
   };
 
-  const resetQuiz = () => { setQuizStep(0); setQuizAnswers([]); setQuizResult(null); };
-
-  const contactItems = [
-    { label: "Instagram", value: "@bloomco.ke",          icon: "📸",                href: INSTAGRAM_URL },
-    { label: "Email",     value: "bloomandco@gmail.com",  icon: <Mail size={18} />,  href: "mailto:bloomandco@gmail.com" },
-    { label: "Phone",     value: "+254 724 973 277",      icon: <Phone size={18} />, href: "tel:+254724973277" },
-    { label: "Location",  value: "Nairobi, Kenya",        icon: <MapPin size={18} /> },
-  ];
-
-  const wellnessProducts = products.filter(p => p.category === "wellness");
-  const kidsProducts     = products.filter(p => p.category === "kids");
-  const displayProducts  = productTab === "wellness" ? wellnessProducts : kidsProducts;
+  const filteredProducts = activeCategory === "all" 
+    ? products 
+    : products.filter(p => p.category === activeCategory);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#f7f3ef", color: "#2a1f1f", overflowX: "hidden" }}>
-
-      {/* ── GLOBAL STYLES ─────────────────────────────── */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
-        img { display: block; max-width: 100%; }
-        .serif { font-family: 'Cormorant Garamond', serif; }
-
-        .pill-btn {
-          display: inline-block; padding: 13px 28px; border-radius: 100px;
-          font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
-          text-decoration: none; transition: all 0.3s ease; cursor: pointer;
-          border: 1px solid transparent; font-family: 'DM Sans', sans-serif;
-          font-weight: 400; white-space: nowrap;
-        }
-        .pill-rose         { background: #b5606a; color: #fff; border-color: #b5606a; }
-        .pill-rose:hover   { background: #9e4f58; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(181,96,106,0.3); }
-        .pill-outline-rose { background: transparent; color: #b5606a; border-color: #b5606a; }
-        .pill-outline-rose:hover { background: #b5606a; color: #fff; transform: translateY(-2px); }
-        .pill-sage         { background: #6b8c72; color: #fff; border-color: #6b8c72; }
-        .pill-sage:hover   { background: #5a7860; transform: translateY(-2px); }
-        .pill-light        { background: #f7f3ef; color: #2a1f1f; border-color: #f7f3ef; }
-        .pill-light:hover  { background: #ede8e0; transform: translateY(-2px); }
-        .pill-dark         { background: #b5606a; color: #fff; border-color: #b5606a; }
-        .pill-dark:hover   { background: #9e4f58; transform: translateY(-2px); }
-
-        .nav-link {
-          position: relative; font-size: 13px; letter-spacing: 0.12em;
-          text-transform: uppercase; color: #2a1f1f; text-decoration: none;
-          padding-bottom: 2px; font-family: 'DM Sans', sans-serif;
-        }
-        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #b5606a; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
-        .nav-link:hover { color: #b5606a; }
-
-        .label { display: block; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #b5606a; margin-bottom: 16px; font-weight: 400; }
-
-        .wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-        @media (min-width: 600px)  { .wrap { padding: 0 32px; } }
-        @media (min-width: 1100px) { .wrap { padding: 0 48px; } }
-
-        .sp { padding: 64px 0; }
-        @media (min-width: 768px)  { .sp { padding: 96px 0; } }
-        @media (min-width: 1100px) { .sp { padding: 120px 0; } }
-
-        .sh { font-size: clamp(32px, 6vw, 60px); font-weight: 300; line-height: 1.05; }
-
-        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .marquee-track { display: flex; width: max-content; animation: marquee 24s linear infinite; }
-        .marquee-track:hover { animation-play-state: paused; }
-
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideRight { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
-
-        .hero-word { display: inline-block; opacity: 0; animation: fadeUp 0.6s ease forwards; }
-        .hero-visible .hero-word { }
-
-        .burger { display: flex; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 200; position: relative; }
-        .burger span { display: block; height: 2px; background: #2a1f1f; transition: all 0.3s ease; transform-origin: center; }
-        .burger span:nth-child(1) { width: 22px; }
-        .burger span:nth-child(2) { width: 22px; }
-        .burger span:nth-child(3) { width: 14px; }
-        .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); width: 22px; }
-        .burger.open span:nth-child(2) { opacity: 0; }
-        .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); width: 22px; }
-        @media (min-width: 768px) { .burger { display: none; } }
-
-        .desk-nav  { display: none; }
-        .desk-shop { display: none; }
-        @media (min-width: 768px) { .desk-nav  { display: flex; gap: 36px; align-items: center; } }
-        @media (min-width: 768px) { .desk-shop { display: inline-block; } }
-
-        .drawer { position: fixed; inset: 0; background: #f7f3ef; z-index: 150; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 32px; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77,0,0.175,1); }
-        .drawer.open { transform: translateX(0); }
-        @media (min-width: 768px) { .drawer { display: none !important; } }
-        .drawer-link { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,8vw,48px); font-weight: 300; color: #2a1f1f; text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
-        .drawer-link:hover { color: #b5606a; }
-
-        .hero-grid { display: flex; flex-direction: column; gap: 40px; padding: 52px 0 64px; }
-        @media (min-width: 860px) { .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 80px 0 100px; } }
-        .hero-img { order: -1; border-radius: 28px; overflow: hidden; box-shadow: 0 32px 80px rgba(181,96,106,0.15); aspect-ratio: 4/5; position: relative; width: 100%; }
-        @media (min-width: 860px) { .hero-img { order: 0; border-radius: 40px; } }
-        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-
-        .two-col { display: flex; flex-direction: column; gap: 48px; }
-        @media (min-width: 860px) { .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; } }
-        .two-col-top { align-items: start; }
-        .sq-img { border-radius: 28px; overflow: hidden; box-shadow: 0 24px 64px rgba(181,96,106,0.12); aspect-ratio: 1/1; position: relative; width: 100%; }
-        @media (min-width: 860px) { .sq-img { border-radius: 40px; } }
-
-        .v-row { display: grid; grid-template-columns: 36px 1fr; gap: 16px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.1); align-items: start; transition: all 0.5s ease; }
-        @media (min-width: 768px) { .v-row { grid-template-columns: 56px 1fr 2fr; gap: 32px; align-items: center; padding: 28px 0; } }
-        .v-desc-mobile { display: block; color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.65; margin-top: 6px; }
-        @media (min-width: 768px) { .v-desc-mobile { display: none; } }
-        .v-desc-desk { display: none; }
-        @media (min-width: 768px) { .v-desc-desk { display: block; color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.7; } }
-
-        .offerings-grid { display: grid; gap: 10px; grid-template-columns: 1fr; }
-        @media (min-width: 460px) { .offerings-grid { grid-template-columns: repeat(2,1fr); } }
-
-        .why-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-        @media (min-width: 560px) { .why-grid { grid-template-columns: repeat(2,1fr); } }
-        @media (min-width: 960px) { .why-grid { grid-template-columns: repeat(3,1fr); } }
-        .w-card { background: #fff; border-radius: 22px; padding: 28px; box-shadow: 0 6px 28px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
-        @media (min-width: 768px) { .w-card { padding: 36px; } }
-        .w-card:hover { transform: translateY(-5px); }
-
-        .contact-grid { display: flex; flex-direction: column; gap: 48px; }
-        @media (min-width: 860px) { .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; } }
-
-        .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
-        @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; text-align: left; } }
-
-        /* product cards */
-        .prod-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        @media (min-width: 560px) { .prod-grid { grid-template-columns: repeat(2,1fr); } }
-        @media (min-width: 960px) { .prod-grid { grid-template-columns: repeat(3,1fr); } }
-
-        /* peek inside grid */
-        .peek-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-        @media (min-width: 560px) { .peek-grid { grid-template-columns: repeat(2,1fr); } }
-        @media (min-width: 900px) { .peek-grid { grid-template-columns: repeat(3,1fr); } }
-
-        /* quiz */
-        .quiz-option { background: #fff; border: 1.5px solid rgba(181,96,106,0.15); border-radius: 16px; padding: 16px 20px; cursor: pointer; transition: all 0.25s ease; text-align: left; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2a1f1f; width: 100%; }
-        .quiz-option:hover { border-color: #b5606a; background: #f5e6e8; transform: translateX(4px); }
-
-        /* mobile sticky bar */
-        .sticky-bar { display: none; }
-        @media (max-width: 767px) { .sticky-bar { display: flex; } }
-
-        /* whatsapp */
-        .wa-btn { position: fixed; bottom: 80px; right: 20px; z-index: 300; width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; }
-        .wa-btn:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(37,211,102,0.5); }
-        @media (min-width: 768px) { .wa-btn { bottom: 32px; right: 32px; } }
-
-        /* value animation */
-        .v-row-hidden { opacity: 0; transform: translateX(-30px); }
-        .v-row-visible { opacity: 1; transform: translateX(0); transition: opacity 0.6s ease, transform 0.6s ease; }
-
-        /* img placeholder */
-        .img-placeholder { background: linear-gradient(135deg, #f5e6e8 0%, #e8ede5 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #b5606a; font-size: 12px; letter-spacing: 0.08em; text-align: center; padding: 20px; }
-
-        /* founder section */
-        .founder-grid { display: flex; flex-direction: column; gap: 48px; }
-        @media (min-width: 860px) { .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; } }
-      `}</style>
-
-      {/* ── WHATSAPP FLOATING BUTTON ───────────────────── */}
-      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="wa-btn" aria-label="Chat on WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-      </a>
-
-      {/* ── MOBILE STICKY BAR ─────────────────────────── */}
-      <div className="sticky-bar" style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 290, background: "#b5606a", padding: "14px 20px", alignItems: "center", justifyContent: "space-between" }}>
-        <p style={{ color: "#fff", fontSize: 13, fontWeight: 400 }}>Ready to bloom? 🌸</p>
-        <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" style={{ background: "#fff", color: "#b5606a", padding: "8px 20px", borderRadius: 100, fontSize: 12, fontWeight: 500, textDecoration: "none", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-          Shop Now →
-        </a>
-      </div>
-
-      {/* ── MOBILE DRAWER ─────────────────────────────── */}
-      <div className={`drawer ${menuOpen ? "open" : ""}`}>
-        {["about", "products", "quiz", "values", "corporate", "contact"].map((s) => (
-          <a key={s} href={`#${s}`} className="drawer-link" onClick={() => setMenuOpen(false)}>
-            {s.charAt(0).toUpperCase() + s.slice(1)}
-          </a>
-        ))}
-        <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose" style={{ marginTop: 8 }} onClick={() => setMenuOpen(false)}>
-          Shop Now
-        </a>
-      </div>
-
-      {/* ── NAVBAR ────────────────────────────────────── */}
-      <header style={{ position: "sticky", top: 0, zIndex: 160, background: "rgba(247,243,239,0.95)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: "1px solid rgba(181,96,106,0.1)" }}>
-        <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 20px" }}>
-          <a href="#" style={{ textDecoration: "none", zIndex: 200, position: "relative" }}>
-            <Image src="/logo.png" alt="Bloom & Co — Wellness and Productivity Brand Nairobi Kenya" width={130} height={52} style={{ height: 38, width: "auto" }} />
-          </a>
-          <nav className="desk-nav">
-            {["about", "products", "quiz", "values", "corporate", "contact"].map((s) => (
-              <a key={s} href={`#${s}`} className="nav-link">{s.charAt(0).toUpperCase() + s.slice(1)}</a>
-            ))}
-          </nav>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose desk-shop">Shop Now</a>
-            <button className={`burger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-              <span /><span /><span />
-            </button>
-          </div>
+    <div className="bg-[#FAF8F5] text-[#2E2A27] min-h-screen font-sans antialiased">
+      {/* ── HEADER / HERO NAVIGATION ────────────────────────── */}
+      <header className="py-6 px-6 md:px-12 flex justify-between items-center border-b border-[#ECE7E2]">
+        <div className="font-serif text-2xl tracking-wider text-[#2E2A27]">
+          BLOOM & CO.
         </div>
+        <a 
+          href={SHOP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 bg-[#2E2A27] hover:bg-[#4D4742] text-white px-5 py-2.5 rounded-full text-xs uppercase tracking-wider transition-colors"
+        >
+          <ShoppingBag className="w-4 h-4" /> Shop Catalog
+        </a>
       </header>
 
-      {/* ── HERO ──────────────────────────────────────── */}
-      <section style={{ background: "#f7f3ef" }} aria-label="Bloom and Co — Where Wellness Meets Purpose">
-        <div className="wrap">
-          <div className="hero-grid">
-            <div className={heroVisible ? "hero-visible" : ""}>
-              <span className="label">Wellness · Productivity · Intentional Living</span>
-              <h1 className="serif" style={{ fontSize: "clamp(42px, 8vw, 88px)", fontWeight: 300, lineHeight: 0.95, letterSpacing: "-0.02em", color: "#2a1f1f" }}>
-                {["Where", "Wellness"].map((w, i) => (
-                  <span key={w} className="hero-word" style={{ animationDelay: `${i * 0.15}s`, marginRight: "0.25em" }}>{w}</span>
-                ))}
-                <br />
-                {["Meets", "Purpose"].map((w, i) => (
-                  <em key={w} className="hero-word" style={{ color: "#b5606a", animationDelay: `${(i + 2) * 0.15}s`, marginRight: i === 0 ? "0.25em" : 0 }}>{w}</em>
-                ))}
-              </h1>
-              <p className="hero-word" style={{ fontSize: "clamp(15px, 2.5vw, 17px)", color: "#6b5555", lineHeight: 1.8, maxWidth: 480, marginTop: 20, animationDelay: "0.7s" }}>
-                Bloom & Co creates intentional wellness and productivity tools that help individuals and organizations cultivate healthier, more balanced, and more meaningful lives — across Africa and beyond.
-              </p>
-              <div className="hero-btns">
-                <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose" style={{ animationDelay: "0.9s" }}>Explore Products</a>
-                <a href="#corporate" className="pill-btn pill-outline-rose" style={{ animationDelay: "1.0s" }}>Partner With Us</a>
-              </div>
-            </div>
-            <div className="hero-img" style={{ transform: "translateZ(0)" }}>
-              {/* Hero image placeholder — replace with your best flat-lay journal lifestyle photo */}
-              <div className="img-placeholder" style={{ width: "100%", height: "100%", minHeight: 400, position: "absolute", inset: 0 }}>
-                <span style={{ fontSize: 48 }}>🌸</span>
-                <span style={{ color: "#b5606a", fontWeight: 500 }}>HERO IMAGE</span>
-                <span style={{ color: "#6b5555", maxWidth: 200 }}>Lifestyle flat-lay: journal, rose, pen on cream surface</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* ── HERO BANNER ───────────────────────────────────── */}
+      <section className="py-20 px-6 text-center max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-7xl font-serif text-[#2E2A27] leading-tight mb-6">
+          Nourish Your Mind, <br /><em className="italic font-normal text-[#C98C8C]">Align Your Energy</em>
+        </h1>
+        <p className="text-[#5F5A55] text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8">
+          Premium wellness logs, guided journals, and intentional resources beautifully customized to match your seasonal rhythm.
+        </p>
       </section>
 
-      {/* ── MARQUEE ───────────────────────────────────── */}
-      <div style={{ background: "#b5606a", color: "#fff", overflow: "hidden", padding: "15px 0" }}>
-        <div className="marquee-track">
-          {Array(2).fill(null).map((_, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 24, paddingRight: 24 }}>
-              {["Wellness Journals", "Flow With Your Cycle", "Corporate Wellness", "Mindful Living", "Kids Coloring Books", "Intentional Growth", "Nairobi, Kenya", "Bloom & Co"].map((item, j) => (
-                <span key={j} style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", whiteSpace: "nowrap", display: "flex", alignItems: "center", gap: 24 }}>
-                  {item}<span style={{ opacity: 0.4 }}>✦</span>
-                </span>
-              ))}
-            </div>
+      {/* ── PRODUCT DISPLAY SECTION ───────────────────────── */}
+      <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="flex justify-center gap-4 mb-12">
+          {["all", "wellness", "kids"].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-6 py-2 rounded-full text-xs uppercase tracking-widest transition-all ${
+                activeCategory === cat 
+                  ? "bg-[#C98C8C] text-white shadow-sm" 
+                  : "bg-white border border-[#ECE7E2] text-[#6B645E] hover:bg-[#FAF8F5]"
+              }`}
+            >
+              {cat === "all" ? "View All" : `${cat} collection`}
+            </button>
           ))}
         </div>
-      </div>
 
-      {/* ── ABOUT / FOUNDER ───────────────────────────── */}
-      <section id="about" className="sp" style={{ background: "#fff" }}>
-        <div className="wrap">
-          <div className="two-col">
-            <div className="sq-img">
-              {/* Founder photo placeholder — use the Selar profile photo of Fridah holding the Devotion Workbook */}
-              <div className="img-placeholder" style={{ width: "100%", height: "100%", minHeight: 400, position: "absolute", inset: 0 }}>
-                <span style={{ fontSize: 48 }}>👩🏾</span>
-                <span style={{ color: "#b5606a", fontWeight: 500 }}>FOUNDER PHOTO</span>
-                <span style={{ color: "#6b5555", maxWidth: 200 }}>Fridah holding the Devotion Workbook — warm, natural smile</span>
-              </div>
-            </div>
-            <div>
-              <span className="label">Our Story</span>
-              <h2 className="serif sh" style={{ marginBottom: 20 }}>
-                Wellness Is The<br />Foundation of<br /><em>Sustainable Growth</em>
-              </h2>
-              <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.85, marginBottom: 14 }}>
-                Bloom & Co bridges wellness and workplace productivity through intentional tools and meaningful experiences. Founded in Nairobi, Kenya by Fridah Nairuti — an administration and operations professional with a deep passion for holistic living.
-              </p>
-              <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.85, marginBottom: 28 }}>
-                Our vision is to become a leading wellness and productivity brand in Africa — empowering individuals and organizations to thrive through reflection, clarity, and intentional living.
-              </p>
-              <div style={{ background: "#f5e6e8", borderRadius: 16, padding: "20px 22px", borderLeft: "3px solid #b5606a" }}>
-                <p style={{ fontSize: 15, color: "#6b5555", lineHeight: 1.8, marginBottom: 10, fontStyle: "italic" }}>
-                  "This journal was made for you. Not for your employer. Not for a performance review. For you — the person who shows up every day, carries more than most people see, and rarely gets a quiet moment to ask how you're actually doing."
-                </p>
-                <p style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#b5606a" }}>
-                  Fridah Nairuti — Founder, Bloom & Co
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PEEK INSIDE ───────────────────────────────── */}
-      <section className="sp" style={{ background: "#2a1f1f" }}>
-        <div className="wrap">
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#e8b4b8", marginBottom: 16 }}>What's Inside</span>
-            <h2 className="serif sh" style={{ color: "#f7f3ef" }}>
-              A Look Inside the<br /><em style={{ color: "#e8b4b8" }}>Corporate Wellness Journal</em>
-            </h2>
-            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 15, maxWidth: 560, margin: "20px auto 0", lineHeight: 1.8 }}>
-              Five minutes in the morning. A few at end of day. A weekly pause. Thirty days to reflect, realign, and thrive.
-            </p>
-          </div>
-          <div className="peek-grid">
-            {peekItems.map((item, i) => (
-              <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 20, padding: "28px 24px", transition: "all 0.3s ease" }}
-                onMouseEnter={e => { e.currentTarget.style.background = "rgba(181,96,106,0.12)"; e.currentTarget.style.borderColor = "rgba(181,96,106,0.3)"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
-              >
-                <div style={{ fontSize: 32, marginBottom: 14 }}>{item.icon}</div>
-                <h3 className="serif" style={{ fontSize: 20, fontWeight: 400, color: "#f7f3ef", marginBottom: 10 }}>{item.label}</h3>
-                <div style={{ width: 32, height: 2, background: "#b5606a", marginBottom: 12, borderRadius: 2 }} />
-                <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, lineHeight: 1.8 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: "center", marginTop: 48 }}>
-            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose">Get Your Journal</a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PRODUCTS ──────────────────────────────────── */}
-      <section id="products" className="sp" style={{ background: "#f7f3ef" }}>
-        <div className="wrap">
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <span className="label">Our Collection</span>
-            <h2 className="serif sh">
-              Tools for Every<br /><em>Season of Your Life</em>
-            </h2>
-            <p style={{ color: "#6b5555", fontSize: 15, maxWidth: 520, margin: "16px auto 0", lineHeight: 1.8 }}>
-              From corporate teams to curious kids — every Bloom & Co product is designed with intention and care.
-            </p>
-          </div>
-
-          {/* tabs */}
-          <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 40, flexWrap: "wrap" }}>
-            {[{ key: "wellness", label: "Wellness & Productivity", emoji: "🌸" }, { key: "kids", label: "Mindful Kids", emoji: "🧸" }].map(tab => (
-              <button key={tab.key} onClick={() => setProductTab(tab.key)} style={{
-                padding: "10px 24px", borderRadius: 100, border: "1.5px solid",
-                borderColor: productTab === tab.key ? "#b5606a" : "rgba(181,96,106,0.2)",
-                background: productTab === tab.key ? "#b5606a" : "transparent",
-                color: productTab === tab.key ? "#fff" : "#b5606a",
-                fontSize: 13, letterSpacing: "0.08em", cursor: "pointer",
-                fontFamily: "'DM Sans', sans-serif", transition: "all 0.25s ease",
-              }}>
-                {tab.emoji} {tab.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="prod-grid">
-            {displayProducts.map((product, i) => (
-              <div key={i} style={{ background: "#fff", borderRadius: 28, overflow: "hidden", boxShadow: "0 8px 32px rgba(181,96,106,0.07)", transition: "transform 0.35s ease, box-shadow 0.35s ease", display: "flex", flexDirection: "column", minWidth: 0 }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 56px rgba(181,96,106,0.13)"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(181,96,106,0.07)"; }}
-              >
-                {/* cover image area */}
-                <div style={{ aspectRatio: "3/2", position: "relative", background: "linear-gradient(135deg, #f5e6e8, #e8ede5)" }}>
-                  <div className="img-placeholder" style={{ position: "absolute", inset: 0 }}>
-                    <span style={{ fontSize: 40 }}>{product.icon}</span>
-                    <span style={{ color: "#b5606a", fontWeight: 500, fontSize: 10, letterSpacing: "0.15em" }}>COVER IMAGE</span>
-                    <span style={{ color: "#6b5555", fontSize: 10, maxWidth: 160, lineHeight: 1.5 }}>{product.coverDesc}</span>
-                  </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProducts.map((product, idx) => (
+            <div key={idx} className="bg-white rounded-3xl border border-[#ECE7E2] p-6 shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-1 duration-300">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <span className="text-4xl">{product.icon}</span>
                   {product.badge && (
-                    <div style={{ position: "absolute", top: 14, left: 14, background: "#b5606a", color: "#fff", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 100 }}>
+                    <span className="bg-[#F2ECE6] text-[#A67C7C] text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">
                       {product.badge}
-                    </div>
+                    </span>
                   )}
                 </div>
-                {/* card body */}
-                <div style={{ padding: "24px 24px 28px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
-                  <p style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#b5606a", marginBottom: 8 }}>
-                    {product.subtitle}
-                  </p>
-                  <h3 className="serif" style={{ fontSize: 22, fontWeight: 400, marginBottom: 10, lineHeight: 1.2, color: "#2a1f1f" }}>
-                    {product.title}
-                  </h3>
-                  <div style={{ width: 36, height: 2, background: "#b5606a", marginBottom: 12, borderRadius: 2 }} />
-                  <p style={{ color: "#6b5555", fontSize: 13, lineHeight: 1.8, marginBottom: 16, flexGrow: 1 }}>
-                    {product.description}
-                  </p>
-                  <ul style={{ listStyle: "none", marginBottom: 20, display: "flex", flexDirection: "column", gap: 6 }}>
-                    {product.features.map((f, fi) => (
-                      <li key={fi} style={{ fontSize: 12, color: "#6b5555", display: "flex", alignItems: "center", gap: 8 }}>
-                        <span style={{ color: "#b5606a", fontWeight: 600 }}>✓</span> {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose" style={{ textAlign: "center", fontSize: 12, padding: "11px 20px" }}>
-                    Get Your Copy
-                  </a>
-                </div>
+                <h3 className="text-2xl font-serif text-[#2E2A27] mb-1">{product.title}</h3>
+                <p className="text-xs italic text-[#A69F99] mb-4">{product.subtitle}</p>
+                <p className="text-[#5F5A55] text-sm leading-relaxed mb-6">{product.description}</p>
+                
+                <ul className="space-y-2 mb-6">
+                  {product.features.map((feat, fIdx) => (
+                    <li key={fIdx} className="text-xs text-[#6B645E] flex items-center gap-2">
+                      <span className="text-[#C98C8C]">✦</span> {feat}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: "center", marginTop: 48 }}>
-            <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-outline-rose">View All Products on Selar</a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── BLOOM INTO YOURSELF QUIZ ───────────────────── */}
-      <section id="quiz" className="sp" style={{ background: "#f5e6e8" }}>
-        <div className="wrap">
-          <div style={{ maxWidth: 640, margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: 40 }}>
-              <span className="label">Find Your Match</span>
-              <h2 className="serif sh">
-                Bloom Into<br /><em>Yourself</em>
-              </h2>
-              <p style={{ color: "#6b5555", fontSize: 15, marginTop: 12, lineHeight: 1.8 }}>
-                Answer 3 quick questions and we'll recommend the perfect Bloom & Co product for you.
-              </p>
+              <div className="border-t border-[#F5F1EC] pt-4 mt-auto">
+                <p className="text-[11px] text-[#A69F99] italic mb-4">Design: {product.coverDesc}</p>
+                <a 
+                  href={SHOP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center block bg-[#FAF8F5] hover:bg-[#C98C8C] hover:text-white border border-[#ECE7E2] text-[#2E2A27] text-xs uppercase tracking-widest py-3 rounded-xl font-medium transition-all"
+                >
+                  Order Digital Copy
+                </a>
+              </div>
             </div>
-
-            {/* INTRO */}
-            {quizStep === 0 && (
-              <div style={{ textAlign: "center", animation: "fadeIn 0.4s ease" }}>
-                <div style={{ fontSize: 72, marginBottom: 24 }}>🌸</div>
-                <button onClick={() => setQuizStep(1)} className="pill-btn pill-rose" style={{ fontSize: 15, padding: "16px 40px" }}>
-                  Start the Quiz
-                </button>
-              </div>
-            )}
-
-            {/* QUESTIONS */}
-            {quizStep >= 1 && quizStep <= 3 && (
-              <div style={{ animation: "fadeUp 0.4s ease" }}>
-                {/* progress */}
-                <div style={{ display: "flex", gap: 6, marginBottom: 32 }}>
-                  {[1, 2, 3].map(n => (
-                    <div key={n} style={{ flex: 1, height: 3, borderRadius: 100, background: n <= quizStep ? "#b5606a" : "rgba(181,96,106,0.2)", transition: "background 0.3s ease" }} />
-                  ))}
-                </div>
-                <p style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "#b5606a", marginBottom: 16 }}>
-                  Question {quizStep} of 3
-                </p>
-                <h3 className="serif" style={{ fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 400, marginBottom: 28, color: "#2a1f1f", lineHeight: 1.2 }}>
-                  {quizQuestions[quizStep - 1].q}
-                </h3>
-                <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                  {quizQuestions[quizStep - 1].options.map((opt, i) => (
-                    <button key={i} className="quiz-option" onClick={() => handleQuizAnswer(opt.value)}>
-                      <span style={{ color: "#b5606a", marginRight: 10, fontWeight: 500 }}>0{i + 1}</span>
-                      {opt.text}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* RESULT */}
-            {quizStep === 4 && quizResult && (
-              <div style={{ textAlign: "center", animation: "fadeUp 0.5s ease", background: "#fff", borderRadius: 28, padding: "40px 32px", boxShadow: "0 16px 48px rgba(181,96,106,0.12)" }}>
-                <div style={{ fontSize: 64, marginBottom: 16 }}>{quizResult.icon}</div>
-                <p style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "#b5606a", marginBottom: 12 }}>
-                  Your Perfect Match
-                </p>
-                <h3 className="serif" style={{ fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 400, color: "#2a1f1f", marginBottom: 14, lineHeight: 1.1 }}>
-                  {quizResult.title}
-                </h3>
-                <div style={{ width: 40, height: 2, background: "#b5606a", margin: "0 auto 16px", borderRadius: 2 }} />
-                <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.8, marginBottom: 28, maxWidth: 400, margin: "0 auto 28px" }}>
-                  {quizResult.desc}
-                </p>
-                <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-                  <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose">Get Your Copy</a>
-                  <button onClick={resetQuiz} className="pill-btn pill-outline-rose">Try Again</button>
-                </div>
-              </div>
-            )}
-          </div>
+          ))}
         </div>
       </section>
 
       {/* ── CORE VALUES ───────────────────────────────── */}
-      <section id="values" className="sp" style={{ background: "#2a1f1f", color: "#f7f3ef" }}>
-        <div className="wrap">
-          <div style={{ marginBottom: 48 }}>
-            <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#e8b4b8", marginBottom: 16, fontWeight: 400 }}>Core Values</span>
-            <h2 className="serif sh">Built on Principles<br /><em>That Matter</em></h2>
+      <section className="bg-white py-24 px-6 md:px-12 border-y border-[#ECE7E2]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-serif text-[#2E2A27]">Built on Intentional Pillars</h2>
+            <p className="text-[#6B645E] mt-2 text-sm">How we design and measure value for your daily rhythm.</p>
           </div>
-          <div ref={valuesRef}>
-            {values.map((v, i) => (
-              <div key={v.label}
-                className={valuesInView ? "v-row v-row-visible" : "v-row v-row-hidden"}
-                style={{
-                  transitionDelay: `${i * 0.12}s`,
-                  ...(i === values.length - 1 ? { borderBottom: "1px solid rgba(255,255,255,0.1)" } : {}),
-                }}>
-                <span style={{ fontSize: 11, color: "#e8b4b8", letterSpacing: "0.1em", paddingTop: 4 }}>0{i + 1}</span>
-                <div>
-                  <h3 className="serif" style={{ fontSize: "clamp(20px, 3vw, 26px)", fontWeight: 400, color: "#f7f3ef" }}>{v.label}</h3>
-                  <p className="v-desc-mobile">{v.desc}</p>
-                </div>
-                <p className="v-desc-desk">{v.desc}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {values.map((v, idx) => (
+              <div key={idx} className="p-6 bg-[#FAF8F5] rounded-2xl border border-[#ECE7E2]">
+                <h4 className="font-serif text-xl text-[#2E2A27] mb-2">{v.label}</h4>
+                <p className="text-[#5F5A55] text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── BLOOM ENERGY QUIZ ────────────────────────── */}
+      <section className="bg-[#F7F3EE] py-28 px-6 md:px-12 overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center">
+
+          <p className="tracking-[0.35em] uppercase text-xs text-[#8B9A88] mb-5">
+            Wellness Experience
+          </p>
+
+          <h2 className="text-5xl md:text-6xl font-serif text-[#2E2A27] leading-tight mb-6">
+            Discover Your <em className="italic">Bloom Energy</em>
+          </h2>
+
+          <p className="text-[#5F5A55] text-lg leading-8 max-w-2xl mx-auto mb-14">
+            A gentle wellness personality experience designed to help you reconnect
+            with the energy, rituals, and rhythms that nourish you most.
+          </p>
+
+          {!quizStarted && !quizResult && (
+            <div className="bg-white rounded-[2rem] p-10 shadow-sm border border-[#ECE7E2]">
+              <div className="text-6xl mb-6">🌿</div>
+
+              <p className="text-[#6B645E] leading-8 max-w-xl mx-auto mb-8">
+                No pressure. No wrong answers.
+                Just a soft little moment for yourself.
+              </p>
+
+              <button
+                onClick={() => setQuizStarted(true)}
+                className="bg-[#C98C8C] hover:bg-[#B97B7B] transition-all text-white px-8 py-4 rounded-full text-sm tracking-wide uppercase"
+              >
+                Start the Experience →
+              </button>
+            </div>
+          )}
+
+          {quizStarted && !quizResult && (
+            <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-sm border border-[#ECE7E2] text-left">
+
+              <div className="flex items-center justify-between mb-10">
+                <span className="text-sm tracking-[0.25em] uppercase text-[#9A948F]">
+                  0{quizIndex + 1} — 05
+                </span>
+
+                <div className="w-40 h-[3px] bg-[#EFE8E2] rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-[#C98C8C] transition-all duration-500"
+                    style={{ width: `${((quizIndex + 1) / 5) * 100}%` }}
+                  />
+                </div>
+              </div>
+
+              <h3 className="text-3xl md:text-4xl font-serif text-[#2E2A27] mb-10 leading-snug">
+                {bloomQuestions[quizIndex].question}
+              </h3>
+
+              <div className="grid gap-4">
+                {bloomQuestions[quizIndex].options.map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleBloomAnswer(option.value)}
+                    className="group bg-[#FAF8F5] hover:bg-[#F2ECE6] border border-[#EEE8E2] rounded-2xl p-5 text-left transition-all duration-300"
+                  >
+                    <span className="text-[#4D4742] text-lg group-hover:translate-x-1 inline-block transition-all">
+                      {option.text}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {quizResult && (
+            <div className="bg-white rounded-[2rem] p-10 md:p-14 shadow-sm border border-[#ECE7E2]">
+
+              <div className="text-6xl mb-6">✨</div>
+
+              <h3 className="text-4xl md:text-5xl font-serif text-[#2E2A27] mb-6 leading-tight">
+                {quizResult.title}
+              </h3>
+
+              <p className="text-[#5F5A55] leading-8 text-lg max-w-2xl mx-auto mb-8">
+                {quizResult.desc}
+              </p>
+
+              <div className="bg-[#F8F4EF] rounded-2xl p-6 italic text-[#7A746F] mb-10 max-w-2xl mx-auto">
+                “{quizResult.affirmation}”
+              </div>
+
+              <div className="border-t border-[#EEE7E0] pt-8 flex flex-col items-center gap-4">
+                <p className="uppercase tracking-[0.25em] text-xs text-[#9B958F]">
+                  Explore tools that support your energy flow below
+                </p>
+                <button
+                  onClick={() => {
+                    setQuizStarted(false);
+                    setQuizIndex(0);
+                    setQuizAnswers([]);
+                    setQuizResult(null);
+                  }}
+                  className="text-xs uppercase tracking-widest text-[#C98C8C] hover:text-[#B97B7B] font-semibold transition-colors underline underline-offset-4"
+                >
+                  Retake Quiz ↺
+                </button>
+              </div>
+            </div>
+          )}
+
         </div>
       </section>
 
       {/* ── CORPORATE WELLNESS ────────────────────────── */}
-      <section id="corporate" className="sp" style={{ background: "#fff" }}>
-        <div className="wrap">
-          <div className="two-col two-col-top">
-            <div>
-              <span className="label">Corporate Wellness</span>
-              <h2 className="serif sh" style={{ marginBottom: 20 }}>
-                Partnering With<br />Organizations to<br /><em>Cultivate Thriving Teams</em>
-              </h2>
-              <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.85, marginBottom: 32 }}>
-                Bloom & Co partners with organizations to support employee wellness and workplace engagement through practical and intentional wellness solutions. We serve corporates, NGOs, educational institutions, insurance companies, hospitality brands, and HR departments.
-              </p>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="#contact" className="pill-btn pill-rose">Get In Touch</a>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-outline-rose">WhatsApp Us</a>
-              </div>
-            </div>
-            <div>
-              <p style={{ fontSize: 13, fontWeight: 500, letterSpacing: "0.05em", marginBottom: 18, color: "#2a1f1f" }}>
-                Our offerings include:
-              </p>
-              <div className="offerings-grid">
-                {corporateOfferings.map((offer, i) => (
-                  <div key={i} style={{ background: "#f5e6e8", borderRadius: 12, padding: "13px 16px", fontSize: 13, color: "#6b5555", lineHeight: 1.5 }}>
-                    <span style={{ color: "#b5606a", marginRight: 8 }}>✓</span>{offer}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY BLOOM ─────────────────────────────────── */}
-      <section className="sp" style={{ background: "#f7f3ef" }}>
-        <div className="wrap">
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <span className="label">Why Choose Us</span>
-            <h2 className="serif sh">Five Reasons to<br /><em>Choose Bloom & Co</em></h2>
-          </div>
-          <div className="why-grid">
-            {whyUs.map((item, i) => (
-              <div key={i} className="w-card">
-                <span className="serif" style={{ fontSize: 44, color: "#f5e6e8", fontWeight: 300, lineHeight: 1, display: "block", marginBottom: 12 }}>0{i + 1}</span>
-                <h3 className="serif" style={{ fontSize: 21, fontWeight: 400, marginBottom: 10, lineHeight: 1.2 }}>{item.title}</h3>
-                <div style={{ width: 32, height: 2, background: "#b5606a", marginBottom: 12, borderRadius: 2 }} />
-                <p style={{ color: "#6b5555", fontSize: 14, lineHeight: 1.75 }}>{item.text}</p>
-              </div>
-            ))}
-            <div style={{ background: "#b5606a", color: "#fff", borderRadius: 22, padding: "28px", display: "flex", flexDirection: "column", gap: 16 }}>
-              <span className="serif" style={{ fontSize: 44, color: "rgba(255,255,255,0.2)", fontWeight: 300, lineHeight: 1, display: "block" }}>05</span>
-              <div>
-                <h3 className="serif" style={{ fontSize: 21, fontWeight: 400, marginBottom: 10, color: "#fff" }}>Authentic Brand Story</h3>
-                <div style={{ width: 32, height: 2, background: "rgba(255,255,255,0.4)", marginBottom: 12, borderRadius: 2 }} />
-                <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 14, lineHeight: 1.75, marginBottom: 20 }}>
-                  Built on a genuine passion for wellness, intentional growth, and creating positive impact across Africa.
-                </p>
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-light" style={{ fontSize: 12 }}>
-                  Follow @bloomco.ke
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FOUNDER MOMENT ────────────────────────────── */}
-      <section style={{ background: "linear-gradient(135deg, #2a1f1f 0%, #3d2a2a 100%)", padding: "80px 0" }}>
-        <div className="wrap">
-          <div className="founder-grid">
-            {/* photo */}
-            <div style={{ borderRadius: 32, overflow: "hidden", aspectRatio: "4/5", position: "relative", boxShadow: "0 32px 80px rgba(0,0,0,0.3)" }}>
-              <div className="img-placeholder" style={{ position: "absolute", inset: 0 }}>
-                <span style={{ fontSize: 48 }}>👩🏾</span>
-                <span style={{ color: "#e8b4b8", fontWeight: 500 }}>FRIDAH'S PHOTO</span>
-                <span style={{ color: "rgba(255,255,255,0.4)", maxWidth: 200, lineHeight: 1.5 }}>Portrait of Fridah — warm, confident, natural setting</span>
-              </div>
-            </div>
-            {/* quote */}
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <span style={{ display: "block", fontSize: 11, letterSpacing: "0.32em", textTransform: "uppercase", color: "#e8b4b8", marginBottom: 24 }}>A Word From Our Founder</span>
-              <div style={{ fontSize: 80, color: "#b5606a", lineHeight: 0.8, fontFamily: "Georgia, serif", marginBottom: 16, opacity: 0.6 }}>"</div>
-              <blockquote className="serif" style={{ fontSize: "clamp(20px, 3vw, 32px)", fontWeight: 300, lineHeight: 1.5, color: "#f7f3ef", fontStyle: "italic", marginBottom: 32 }}>
-                At Bloom & Co, we believe people thrive when wellness and productivity exist in balance. Through intentional products and meaningful partnerships, we are committed to helping individuals and organizations cultivate healthier, more fulfilling lives.
-              </blockquote>
-              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                <div style={{ width: 48, height: 48, borderRadius: "50%", background: "#b5606a", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>FN</div>
-                <div>
-                  <p style={{ color: "#f7f3ef", fontSize: 15, fontWeight: 500 }}>Fridah Nairuti</p>
-                  <p style={{ color: "#e8b4b8", fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase" }}>Founder, Bloom & Co</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── INSTAGRAM FOLLOW ──────────────────────────── */}
-      <section className="sp" style={{ background: "#fff" }}>
-        <div className="wrap" style={{ textAlign: "center" }}>
-          <span className="label">Follow Along</span>
-          <h2 className="serif sh" style={{ marginBottom: 16 }}>Join Us on<br /><em>Instagram</em></h2>
-          <p style={{ color: "#6b5555", fontSize: 15, lineHeight: 1.8, maxWidth: 480, margin: "0 auto 32px" }}>
-            Daily wellness tips, product launches, and behind-the-scenes moments from Bloom & Co. Follow us at @bloomco.ke.
+      <section className="py-24 px-6 md:px-12 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span className="text-xs uppercase tracking-widest text-[#C98C8C] font-semibold block mb-3">Workplace Solutions</span>
+          <h2 className="text-4xl font-serif text-[#2E2A27] mb-6">Elevate Team Well-being and Performance</h2>
+          <p className="text-[#5F5A55] leading-relaxed mb-6">
+            Help your staff minimize burnout, re-prioritize focus, and build healthy structures that secure organizational goals without draining personal health.
           </p>
-          {/* instagram preview grid placeholder */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8, maxWidth: 480, margin: "0 auto 36px" }}>
-            {["Wellness tips post", "Flow With Your Cycle cover", "Floral Coloring Book", "Corporate Journal cover", "Mother's Day Workbook", "Kids Coloring E-Book"].map((desc, i) => (
-              <a key={i} href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
-                style={{ aspectRatio: "1/1", background: "linear-gradient(135deg, #f5e6e8, #e8ede5)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 6, textDecoration: "none", overflow: "hidden", transition: "transform 0.3s ease" }}
-                onMouseEnter={e => e.currentTarget.style.transform = "scale(1.04)"}
-                onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
-              >
-                <span style={{ fontSize: 24 }}>📸</span>
-                <span style={{ fontSize: 9, color: "#b5606a", textAlign: "center", padding: "0 8px", letterSpacing: "0.05em" }}>{desc}</span>
-              </a>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {corporateOfferings.map((item, idx) => (
+              <div key={idx} className="flex items-center gap-2 text-sm text-[#4D4742]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8B9A88]" /> {item}
+              </div>
             ))}
           </div>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose">
-            Follow @bloomco.ke
-          </a>
+        </div>
+        <div className="bg-white border border-[#ECE7E2] p-8 rounded-[2rem] shadow-sm">
+          <h3 className="text-2xl font-serif mb-6 text-[#2E2A27]">Why Choose Bloom & Co.?</h3>
+          <div className="space-y-6">
+            {whyUs.map((w, idx) => (
+              <div key={idx}>
+                <h5 className="font-medium text-sm text-[#2E2A27] mb-1">✦ {w.title}</h5>
+                <p className="text-xs text-[#6B645E] leading-relaxed pl-4">{w.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── CONTACT ───────────────────────────────────── */}
-      <section id="contact" className="sp" style={{ background: "#f7f3ef" }}>
-        <div className="wrap">
-          <div className="contact-grid">
-            <div>
-              <span className="label">Get In Touch</span>
-              <h2 className="serif sh" style={{ marginBottom: 24, lineHeight: 1.05 }}>
-                Let's Build<br /><em>Something Together</em>
-              </h2>
-              <p style={{ color: "#6b5555", fontSize: 16, lineHeight: 1.9, maxWidth: 520 }}>
-                Whether you're an individual seeking intentional wellness tools, or an organization looking to cultivate a thriving team — we'd love to connect.
-              </p>
+      {/* ── FOOTER / CONTACT INFO ────────────────────────── */}
+      <footer className="bg-[#2E2A27] text-[#FAF8F5] py-16 px-6 md:px-12">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+          <div>
+            <h4 className="font-serif text-2xl tracking-wider mb-4">BLOOM & CO.</h4>
+            <p className="text-[#A69F99] text-xs leading-relaxed max-w-xs">
+              Curating deliberate spaces, guides, and habits that invite you to step away from excessive demands and step safely into alignment.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h5 className="text-xs uppercase tracking-widest text-[#C98C8C] font-semibold mb-2">Connect With Us</h5>
+            <a href={`tel:${WHATSAPP_NUMBER}`} className="flex items-center gap-3 text-sm text-[#FAF8F5] hover:text-[#C98C8C] transition-colors">
+              <Phone className="w-4 h-4 text-[#8B9A88]" /> +254 724 973 277
+            </a>
+            <a href="mailto:info@bloomco.ke" className="flex items-center gap-3 text-sm text-[#FAF8F5] hover:text-[#C98C8C] transition-colors">
+              <Mail className="w-4 h-4 text-[#8B9A88]" /> hello@bloomco.ke
+            </a>
+            <div className="flex items-center gap-3 text-sm text-[#A69F99]">
+              <MapPin className="w-4 h-4 text-[#8B9A88]" /> Nairobi, Kenya
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {contactItems.map((item) => (
-                <div key={item.label} style={{ background: "rgba(255,255,255,0.85)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)", borderRadius: 26, padding: "22px 26px", display: "flex", alignItems: "center", gap: 20, boxShadow: "0 8px 32px rgba(181,96,106,0.07)", transition: "all 0.35s ease", border: "1px solid rgba(181,96,106,0.1)" }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 20px 52px rgba(181,96,106,0.12)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(181,96,106,0.07)"; }}
-                >
-                  <div style={{ width: 50, height: 50, borderRadius: "50%", background: "#f5e6e8", display: "flex", alignItems: "center", justifyContent: "center", color: "#b5606a", flexShrink: 0, fontSize: 20 }}>
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p style={{ fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase", color: "#b5606a", marginBottom: 5 }}>{item.label}</p>
-                    {item.href ? (
-                      <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} style={{ fontSize: 15, color: "#2a1f1f", textDecoration: "none" }}>
-                        {item.value}
-                      </a>
-                    ) : (
-                      <span style={{ fontSize: 15, color: "#2a1f1f" }}>{item.value}</span>
-                    )}
-                  </div>
-                </div>
-              ))}
-              <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-rose" style={{ textAlign: "center", marginTop: 8, padding: "20px 30px", display: "flex", alignItems: "center", justifyContent: "center", gap: 12, fontSize: 13, letterSpacing: "0.2em" }}>
-                <ShoppingBag size={18} /> Shop On Selar
+          </div>
+          <div>
+            <h5 className="text-xs uppercase tracking-widest text-[#C98C8C] font-semibold mb-4">Start Your Process</h5>
+            <div className="flex flex-col gap-3">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="bg-[#8B9A88] text-center py-2.5 rounded-xl text-xs uppercase tracking-wider font-medium hover:bg-[#738270] transition-colors">
+                Chat via WhatsApp
+              </a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="bg-transparent border border-[#FAF8F5] text-center py-2.5 rounded-xl text-xs uppercase tracking-wider font-medium hover:bg-white hover:text-[#2E2A27] transition-all">
+                Follow on Instagram
               </a>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ── FOOTER ────────────────────────────────────── */}
-      <footer style={{ borderTop: "1px solid rgba(181,96,106,0.15)", padding: "36px 20px 80px", background: "#2a1f1f" }}>
-        <div className="wrap">
-          <div className="footer-inner">
-            <div>
-              <Image src="/logo.png" alt="Bloom & Co Nairobi Kenya" width={110} height={44} style={{ height: 34, width: "auto" }} />
-              <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 11, marginTop: 8, letterSpacing: "0.05em" }}>Wellness · Productivity · Intentional Living</p>
-            </div>
-            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>© 2026 Bloom & Co · Nairobi, Kenya</p>
-            <div style={{ display: "flex", gap: 20, flexWrap: "wrap", justifyContent: "center" }}>
-              {[
-                { label: "Instagram", href: INSTAGRAM_URL },
-                { label: "WhatsApp", href: WHATSAPP_URL },
-                { label: "Shop", href: SHOP_URL },
-                { label: "Email", href: "mailto:bloomandco@gmail.com" },
-              ].map((l) => (
-                <a key={l.label} href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  style={{ color: "#e8b4b8", fontSize: 13, textDecoration: "none", transition: "color 0.2s" }}
-                  onMouseEnter={e => e.currentTarget.style.color = "#fff"}
-                  onMouseLeave={e => e.currentTarget.style.color = "#e8b4b8"}>
-                  {l.label}
-                </a>
-              ))}
-            </div>
-          </div>
+        <div className="border-t border-[#4D4742] text-center mt-12 pt-6 text-[11px] text-[#A69F99]">
+          © {new Date().getFullYear()} Bloom & Co. Kenya. All rights reserved.
         </div>
       </footer>
-
     </div>
   );
 }
