@@ -153,10 +153,10 @@ const bloomQuestions = [
   {
     question: "Which sentence sounds most like you?",
     options: [
-      { text: "\u201cI need a reset.\u201d", value: "reset" },
-      { text: "\u201cI just want peace.\u201d", value: "quiet" },
-      { text: "\u201cI\u2019m becoming a better version of myself.\u201d", value: "golden" },
-      { text: "\u201cI need to stop overthinking everything.\u201d", value: "dreamer" },
+      { text: "“I need a reset.”", value: "reset" },
+      { text: "“I just want peace.”", value: "quiet" },
+      { text: "“I’m becoming a better version of myself.”", value: "golden" },
+      { text: "“I need to stop overthinking everything.”", value: "dreamer" },
     ],
   },
   {
@@ -191,7 +191,7 @@ const bloomQuestions = [
     options: [
       { text: "fresh flowers in your room", value: "golden" },
       { text: "a slow morning with no alarms", value: "quiet" },
-      { text: "buying another notebook you didn\u2019t need", value: "dreamer" },
+      { text: "buying another notebook you didn’t need", value: "dreamer" },
       { text: "driving with music at sunset", value: "reset" },
     ],
   },
@@ -199,32 +199,36 @@ const bloomQuestions = [
 
 const bloomResults = {
   reset: {
-    title: "The Soft Reset \U0001f319",
+    title: "The Soft Reset",
+    emoji: "🌙",
     affirmation: "Rest is productive too.",
-    energy: "You\u2019ve been carrying more than you admit. You\u2019re craving quiet, softness, and moments where you don\u2019t have to perform for anyone. That\u2019s not weakness \u2014 that\u2019s wisdom.",
+    energy: "You've been carrying more than you admit. You're craving quiet, softness, and moments where you don't have to perform for anyone. That's not weakness — that's wisdom.",
     ritual: "Take a longer shower tonight. No phone. No rushing. Just warm water and silence.",
     prompt: "What would life feel like if you stopped being hard on yourself?",
   },
   quiet: {
-    title: "The Quiet Bloom \U0001f33f",
-    affirmation: "Your peace is not something you earn. It\u2019s something you return to.",
-    energy: "You move through life softly and intentionally. You know what drains you and what fills you. You don\u2019t explain yourself much \u2014 and you don\u2019t need to.",
+    title: "The Quiet Bloom",
+    emoji: "🌿",
+    affirmation: "Your peace is not something you earn. It's something you return to.",
+    energy: "You move through life softly and intentionally. You know what drains you and what fills you. You don't explain yourself much — and you don't need to.",
     ritual: "Make your space feel like a sanctuary this week. One small thing: a candle, fresh flowers, clean surfaces.",
     prompt: "Where in your life are you showing up for others more than for yourself?",
   },
   golden: {
-    title: "The Golden Soul \u2600\ufe0f",
+    title: "The Golden Soul",
+    emoji: "☀️",
     affirmation: "You were made for warm rooms, good music, and people who really see you.",
     energy: "You have this beautiful ability to find joy in ordinary moments and bring warmth to every room you enter. Life feels more alive when you let yourself enjoy it without guilt.",
     ritual: "Do one thing this week purely for the pleasure of it. No purpose. No productivity.",
     prompt: "What does a life that feels golden actually look like for you?",
   },
   dreamer: {
-    title: "The Gentle Dreamer \U0001f338",
+    title: "The Gentle Dreamer",
+    emoji: "🌸",
     affirmation: "You are allowed to bloom gently, at your own pace.",
-    energy: "You\u2019re in a quiet season of becoming. You\u2019re thinking a lot, feeling a lot, and slowly figuring out who you\u2019re growing into. That process deserves patience \u2014 especially from yourself.",
-    ritual: "Write three sentences today about who you\u2019re becoming. Not goals. Just feelings.",
-    prompt: "What would you do differently if you weren\u2019t afraid of getting it wrong?",
+    energy: "You're in a quiet season of becoming. You're thinking a lot, feeling a lot, and slowly figuring out who you're growing into. That process deserves patience — especially from yourself.",
+    ritual: "Write three sentences today about who you're becoming. Not goals. Just feelings.",
+    prompt: "What would you do differently if you weren't afraid of getting it wrong?",
   },
 };
 // ── PEEK INSIDE DATA ────────────────────────────────────────
@@ -743,11 +747,12 @@ export default function BloomWebsite() {
             </p>
 
             <h2 className="serif sh" style={{ color: "#2a1f1f", marginBottom: 24 }}>
-              What Kind of <em>Bloom Are You?</em> \U0001f338
+              What Kind of <em>Bloom Are You?</em> 🌸
             </h2>
 
             <p style={{ color: "#6b5555", fontSize: 17, lineHeight: 1.8, maxWidth: 640, margin: "0 auto 56px" }}>
-              Five gentle questions. One honest reflection. Discover the wellness archetype that feels most like coming home to yourself.
+              No pressure. No wrong answers.
+              Just a soft little moment for yourself.
             </p>
 
             {!quizStarted && !quizResult && (
@@ -797,14 +802,14 @@ export default function BloomWebsite() {
                 {/* 1. AFFIRMATION */}
                 <div style={{ background: "linear-gradient(135deg, #f5e6e8 0%, #ede8e3 100%)", borderRadius: 24, padding: "32px 28px", marginBottom: 36, position: "relative", overflow: "hidden" }}>
                   <div style={{ fontSize: 64, color: "#b5606a", lineHeight: 0.8, fontFamily: "Georgia, serif", marginBottom: 12, opacity: 0.4, position: "absolute", top: 16, left: 20 }}>“</div>
-                  <p className="serif" style={{ fontSize: "clamp(20px, 3.2vw, 28px)", fontWeight: 300, fontStyle: "italic", color: "#2a1f1f", lineHeight: 1.5, paddingTop: 20, position: "relative", zIndex: 1 }}>
+                  <p className="serif" style={{ fontSize: "clamp(22px, 3.8vw, 34px)", fontWeight: 300, fontStyle: "italic", color: "#2a1f1f", lineHeight: 1.55, paddingTop: 20, position: "relative", zIndex: 1 }}>
                     {quizResult.affirmation}
                   </p>
                 </div>
 
                 {/* 2. RESULT TITLE */}
-                <h3 className="serif" style={{ fontSize: "clamp(34px, 5.5vw, 56px)", fontWeight: 300, color: "#2a1f1f", lineHeight: 1.05, marginBottom: 28, letterSpacing: "-0.01em" }}>
-                  You’re {quizResult.title}
+                <h3 className="serif" style={{ fontSize: "clamp(28px, 4.5vw, 46px)", fontWeight: 300, color: "#2a1f1f", lineHeight: 1.1, marginBottom: 28, letterSpacing: "-0.01em" }}>
+                  You’re {quizResult.title} <span style={{ fontStyle: "normal" }}>{quizResult.emoji}</span>
                 </h3>
 
                 {/* 3. YOUR ENERGY LATELY */}
@@ -819,23 +824,23 @@ export default function BloomWebsite() {
 
                 {/* 4. TINY RITUAL */}
                 <div style={{ background: "#f7f3ef", borderRadius: 20, padding: "24px", marginBottom: 24, textAlign: "left" }}>
-                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#6b8c72", marginBottom: 10, fontWeight: 400 }}>Tiny ritual for this week</p>
+                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#6b8c72", marginBottom: 10, fontWeight: 400 }}>A Small Ritual</p>
                   <p style={{ color: "#2a1f1f", fontSize: 15, lineHeight: 1.75 }}>{quizResult.ritual}</p>
                 </div>
 
                 {/* 5. JOURNAL PROMPT */}
                 <div style={{ borderLeft: "2px solid #b5606a", paddingLeft: 20, marginBottom: 40, textAlign: "left" }}>
-                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#b5606a", marginBottom: 8, fontWeight: 400 }}>Journal prompt</p>
+                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#b5606a", marginBottom: 8, fontWeight: 400 }}>A Quiet Question</p>
                   <p className="serif" style={{ color: "#6b5555", fontSize: 18, fontStyle: "italic", lineHeight: 1.6, fontWeight: 300 }}>"{quizResult.prompt}"</p>
                 </div>
 
-                <p style={{ fontSize: 12, color: "#9a8f8a", marginBottom: 18, letterSpacing: "0.05em" }}>
-                  This felt accurate? Share it. 🌸
+                <p style={{ fontSize: 11, color: "#9a8f8a", opacity: 0.65, marginBottom: 18, letterSpacing: "0.04em" }}>
+                  this felt accurate? share it 🌸
                 </p>
                 <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                   <button
                     onClick={() => {
-                      const text = quizResult.title + "\n\n\"" + quizResult.affirmation + "\"\n\nDiscover yours at bloomandco.co.ke 🌸";
+                      const text = quizResult.title + " " + quizResult.emoji + "\n\n\"" + quizResult.affirmation + "\"\n\nDiscover yours at bloomandco.co.ke 🌸";
                       if (navigator.share) { navigator.share({ text }); }
                       else { navigator.clipboard.writeText(text).then(() => alert("Copied! Share it with someone who needs it 🌸")); }
                     }}
