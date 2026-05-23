@@ -159,14 +159,14 @@ const bloomQuestions = [
     ],
   },
   {
-    question: "Which sentence sounds most like you?",
-    options: [
-      { text: ""I need a reset."", value: "reset" },
-      { text: ""I just want peace."", value: "quiet" },
-      { text: ""I'm becoming a better version of myself."", value: "golden" },
-      { text: ""I need to stop overthinking everything."", value: "dreamer" },
-    ],
-  },
+  question: "Which sentence sounds most like you?",
+  options: [
+    { text: "I need a reset.", value: "reset" },
+    { text: "I just want peace.", value: "quiet" },
+    { text: "I'm becoming a better version of myself.", value: "golden" },
+    { text: "I need to stop overthinking everything.", value: "dreamer" },
+  ],
+},
   {
     question: "Your ideal Friday night?",
     options: [
