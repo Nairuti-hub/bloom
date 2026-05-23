@@ -124,105 +124,109 @@ const whyUs = [
 // ── BLOOM WELLNESS PERSONALITY QUIZ DATA ─────────────────
 const bloomQuestions = [
   {
-    question: "It's 7am on a weekday. What does your body want first?",
-    emoji: "🌅",
+    question: "Choose your current life mood:",
     options: [
-      { text: "Ten more minutes of quiet before the world starts 🌙", value: "cultivator" },
-      { text: "To move — a stretch, a walk, something physical 🌿", value: "grounded" },
-      { text: "To make something — coffee, breakfast, a playlist 🎵", value: "creator" },
-      { text: "Connection — a good morning text, a warm voice 🤍", value: "connector" },
-      { text: "A plan — I need to know what today holds 📋", value: "architect" },
+      { text: "trying my best honestly", value: "reset" },
+      { text: "romanticizing my life", value: "golden" },
+      { text: "mentally on vacation", value: "quiet" },
+      { text: "figuring things out quietly", value: "dreamer" },
     ],
   },
   {
-    question: "When life gets overwhelming, you tend to…",
-    emoji: "🌊",
+    question: "What ruins your mood fastest?",
     options: [
-      { text: "Withdraw and go quiet — you need space to process 🌑", value: "cultivator" },
-      { text: "Get outside — movement clears your head like nothing else 🌳", value: "grounded" },
-      { text: "Create something — cook, write, draw, rearrange 🎨", value: "creator" },
-      { text: "Call someone you trust — talking it out is healing 📞", value: "connector" },
-      { text: "Make a list and break it down — structure calms the storm 📝", value: "architect" },
+      { text: "being rushed", value: "quiet" },
+      { text: "too many notifications", value: "reset" },
+      { text: "people draining my energy", value: "dreamer" },
+      { text: "not getting enough sleep", value: "golden" },
     ],
   },
   {
-    question: "Which of these feels most like a full breath?",
-    emoji: "✨",
+    question: "Pick your comfort activity:",
     options: [
-      { text: "An afternoon with no plans and nowhere to be 🛋️", value: "cultivator" },
-      { text: "Bare feet on grass, sun on your face 🌻", value: "grounded" },
-      { text: "Finishing something you made with your own hands 🪴", value: "creator" },
-      { text: "Laughing until your stomach hurts with someone you love 😂", value: "connector" },
-      { text: "Crossing everything off your list and closing your laptop 🖥️", value: "architect" },
+      { text: "scrolling in bed", value: "reset" },
+      { text: "journaling for 5 minutes then stopping", value: "dreamer" },
+      { text: "rewatching comfort shows", value: "quiet" },
+      { text: "disappearing for a while", value: "golden" },
     ],
   },
   {
-    question: "How do you most naturally care for others?",
-    emoji: "🌸",
+    question: "Which sentence sounds most like you?",
     options: [
-      { text: "By being a calm, non-judgemental presence 🕊️", value: "cultivator" },
-      { text: "By showing up physically — helping hands, being there 🤝", value: "grounded" },
-      { text: "By making something for them — a meal, a card, a playlist 🎁", value: "creator" },
-      { text: "By listening, remembering, and checking in 🫶", value: "connector" },
-      { text: "By solving their problem — advice, research, a plan 💡", value: "architect" },
+      { text: "\u201cI need a reset.\u201d", value: "reset" },
+      { text: "\u201cI just want peace.\u201d", value: "quiet" },
+      { text: "\u201cI\u2019m becoming a better version of myself.\u201d", value: "golden" },
+      { text: "\u201cI need to stop overthinking everything.\u201d", value: "dreamer" },
     ],
   },
   {
-    question: "Pick the phrase that lands deepest right now.",
-    emoji: "🌿",
+    question: "Your ideal Friday night?",
     options: [
-      { text: "\"I give myself permission to slow down.\" 🌙", value: "cultivator" },
-      { text: "\"My body knows what it needs.\" 🌿", value: "grounded" },
-      { text: "\"I am most alive when I'm making something.\" 🎨", value: "creator" },
-      { text: "\"My relationships are my greatest wealth.\" 🌺", value: "connector" },
-      { text: "\"Clarity and intention are my superpowers.\" ⭐", value: "architect" },
+      { text: "candles + music", value: "quiet" },
+      { text: "dinner with friends", value: "golden" },
+      { text: "doing absolutely nothing", value: "reset" },
+      { text: "spontaneous plans", value: "dreamer" },
+    ],
+  },
+  {
+    question: "Pick something that instantly comforts you:",
+    options: [
+      { text: "clean sheets", value: "quiet" },
+      { text: "voice notes from friends", value: "golden" },
+      { text: "sunset drives", value: "dreamer" },
+      { text: "coffee alone", value: "reset" },
+    ],
+  },
+  {
+    question: "What are you working on most right now?",
+    options: [
+      { text: "slowing down", value: "reset" },
+      { text: "protecting my energy", value: "quiet" },
+      { text: "staying motivated", value: "golden" },
+      { text: "being kinder to myself", value: "dreamer" },
+    ],
+  },
+  {
+    question: "Pick a little luxury:",
+    options: [
+      { text: "fresh flowers in your room", value: "golden" },
+      { text: "a slow morning with no alarms", value: "quiet" },
+      { text: "buying another notebook you didn\u2019t need", value: "dreamer" },
+      { text: "driving with music at sunset", value: "reset" },
     ],
   },
 ];
 
 const bloomResults = {
-  cultivator: {
-    title: "The Quiet Cultivator 🌿",
-    archetype: "The Introspective Nurturer",
-    desc: "You are someone who grows in stillness. You don't need noise to feel alive — you need depth. Your wellness lives in the margins of the day: the quiet coffee before anyone wakes up, the evening walk, the journal page no one else reads. You recharge through solitude, and you give your best to the world when you've first given it to yourself.",
-    strengths: ["Deep self-awareness", "Emotional intelligence", "Meaningful presence"],
-    affirmation: "Your softness is not weakness — it is the soil everything good grows in.",
-    colour: "#6b8c72",
+  reset: {
+    title: "The Soft Reset \U0001f319",
+    affirmation: "Rest is productive too.",
+    energy: "You\u2019ve been carrying more than you admit. You\u2019re craving quiet, softness, and moments where you don\u2019t have to perform for anyone. That\u2019s not weakness \u2014 that\u2019s wisdom.",
+    ritual: "Take a longer shower tonight. No phone. No rushing. Just warm water and silence.",
+    prompt: "What would life feel like if you stopped being hard on yourself?",
   },
-  grounded: {
-    title: "The Grounded Bloom ☀️",
-    archetype: "The Embodied Thriver",
-    desc: "You are deeply connected to your body and your environment. You don't just think your way through life — you feel it, move through it, and show up with your whole self. Walking barefoot, breathing fresh air, using your hands — these aren't luxuries for you, they're medicine. When you're grounded, you radiate a quiet steadiness that steadies everyone around you.",
-    strengths: ["Physical awareness", "Presence", "Natural resilience"],
-    affirmation: "You don't have to earn your peace — you were made for it.",
-    colour: "#6b8c72",
+  quiet: {
+    title: "The Quiet Bloom \U0001f33f",
+    affirmation: "Your peace is not something you earn. It\u2019s something you return to.",
+    energy: "You move through life softly and intentionally. You know what drains you and what fills you. You don\u2019t explain yourself much \u2014 and you don\u2019t need to.",
+    ritual: "Make your space feel like a sanctuary this week. One small thing: a candle, fresh flowers, clean surfaces.",
+    prompt: "Where in your life are you showing up for others more than for yourself?",
   },
-  creator: {
-    title: "The Gentle Creator 🎨",
-    archetype: "The Expressive Healer",
-    desc: "You experience the world through beauty, texture, and expression. Making things is how you make sense of life — cooking a meal is self-care, rearranging a room is therapy, writing a message is love made visible. You don't need big productions; you need permission to tinker, to play, to craft without apology. Your creativity isn't a hobby — it's how you breathe.",
-    strengths: ["Creative expression", "Emotional depth", "Aesthetic sensitivity"],
-    affirmation: "You don't need to justify the time you spend making beautiful things.",
-    colour: "#b5606a",
+  golden: {
+    title: "The Golden Soul \u2600\ufe0f",
+    affirmation: "You were made for warm rooms, good music, and people who really see you.",
+    energy: "You have this beautiful ability to find joy in ordinary moments and bring warmth to every room you enter. Life feels more alive when you let yourself enjoy it without guilt.",
+    ritual: "Do one thing this week purely for the pleasure of it. No purpose. No productivity.",
+    prompt: "What does a life that feels golden actually look like for you?",
   },
-  connector: {
-    title: "The Warm Connector 🌺",
-    archetype: "The Relational Bloomer",
-    desc: "You are most yourself in relationship. Not the surface kind — the kind where someone really sees you, and you really see them. Your energy rises with genuine conversation, shared laughter, and the intimacy of being truly known. You are the friend who remembers, the colleague who checks in, the person who makes others feel less alone. That is a rare and beautiful gift.",
-    strengths: ["Empathy and warmth", "Deep listening", "Community building"],
-    affirmation: "The love you pour into others is also nourishing you — keep going.",
-    colour: "#b5606a",
-  },
-  architect: {
-    title: "The Intentional Architect ⭐",
-    archetype: "The Purposeful Planner",
-    desc: "You find peace in clarity. While others feel overwhelmed by complexity, you feel called by it — to organise, to simplify, to build. A good plan isn't just practical for you, it's calming. You bloom when you can see where you're going and why. You have a gift for helping others find their footing too, because you've done the work of finding yours.",
-    strengths: ["Strategic thinking", "Purposeful living", "Calm under complexity"],
-    affirmation: "Your vision for your life is a form of self-love — keep building it.",
-    colour: "#6b8c72",
+  dreamer: {
+    title: "The Gentle Dreamer \U0001f338",
+    affirmation: "You are allowed to bloom gently, at your own pace.",
+    energy: "You\u2019re in a quiet season of becoming. You\u2019re thinking a lot, feeling a lot, and slowly figuring out who you\u2019re growing into. That process deserves patience \u2014 especially from yourself.",
+    ritual: "Write three sentences today about who you\u2019re becoming. Not goals. Just feelings.",
+    prompt: "What would you do differently if you weren\u2019t afraid of getting it wrong?",
   },
 };
-
 // ── PEEK INSIDE DATA ────────────────────────────────────────
 const peekItems = [
   { label: "Morning Check-in", desc: "Rate your energy, stress & focus. Choose how you feel: Energized, Grounded, Stretched, or Depleted.", icon: "☀️" },
@@ -739,7 +743,7 @@ export default function BloomWebsite() {
             </p>
 
             <h2 className="serif sh" style={{ color: "#2a1f1f", marginBottom: 24 }}>
-              What Kind of <em>Bloomer Are You?</em>
+              What Kind of <em>Bloom Are You?</em> \U0001f338
             </h2>
 
             <p style={{ color: "#6b5555", fontSize: 17, lineHeight: 1.8, maxWidth: 640, margin: "0 auto 56px" }}>
@@ -776,7 +780,7 @@ export default function BloomWebsite() {
                   {bloomQuestions[quizIndex].question}
                 </h3>
 
-                <div style={{ display: "grid", gap: 12 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                   {bloomQuestions[quizIndex].options.map((option, index) => (
                     <button key={index} className="quiz-option" onClick={() => handleBloomAnswer(option.value)}>
                       <span style={{ color: "#b5606a", marginRight: 12, fontWeight: 500, fontSize: 12, letterSpacing: "0.1em" }}>0{index + 1}</span>
@@ -788,54 +792,58 @@ export default function BloomWebsite() {
             )}
 
             {quizResult && (
-              <div style={{ background: "#fff", borderRadius: 32, padding: "48px 32px", boxShadow: "0 8px 32px rgba(181,96,106,0.07)", border: "1px solid #ece7e2", animation: "fadeUp 0.5s ease" }}>
-                <p style={{ letterSpacing: "0.32em", textTransform: "uppercase", fontSize: 11, color: "#6b8c72", marginBottom: 16 }}>
-                  Your Wellness Archetype
-                </p>
+              <div style={{ background: "#fff", borderRadius: 32, padding: "48px 32px 44px", boxShadow: "0 16px 56px rgba(181,96,106,0.1)", border: "1px solid rgba(181,96,106,0.1)", animation: "fadeUp 0.5s ease" }}>
 
-                <h3 className="serif" style={{ fontSize: "clamp(30px, 5vw, 52px)", fontWeight: 400, color: "#2a1f1f", lineHeight: 1.1, marginBottom: 8 }}>
-                  {quizResult.title}
-                </h3>
-
-                <p style={{ fontSize: 13, letterSpacing: "0.15em", textTransform: "uppercase", color: quizResult.colour, marginBottom: 32 }}>
-                  {quizResult.archetype}
-                </p>
-
-                <div style={{ width: 48, height: 2, background: "#b5606a", borderRadius: 2, margin: "0 auto 32px" }} />
-
-                <p style={{ color: "#6b5555", fontSize: 16, lineHeight: 1.9, maxWidth: 620, margin: "0 auto 32px" }}>
-                  {quizResult.desc}
-                </p>
-
-                <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", marginBottom: 36 }}>
-                  {quizResult.strengths.map((s, i) => (
-                    <span key={i} style={{ background: "#f5e6e8", color: "#b5606a", fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", padding: "7px 16px", borderRadius: 100 }}>
-                      {s}
-                    </span>
-                  ))}
-                </div>
-
-                <div style={{ background: "linear-gradient(135deg, #f5e6e8, #e8ede5)", borderRadius: 20, padding: "28px 32px", maxWidth: 580, margin: "0 auto 40px" }}>
-                  <p className="serif" style={{ fontSize: "clamp(18px, 3vw, 24px)", fontWeight: 300, fontStyle: "italic", color: "#2a1f1f", lineHeight: 1.5 }}>
-                    “{quizResult.affirmation}”
+                {/* 1. AFFIRMATION */}
+                <div style={{ background: "linear-gradient(135deg, #f5e6e8 0%, #ede8e3 100%)", borderRadius: 24, padding: "32px 28px", marginBottom: 36, position: "relative", overflow: "hidden" }}>
+                  <div style={{ fontSize: 64, color: "#b5606a", lineHeight: 0.8, fontFamily: "Georgia, serif", marginBottom: 12, opacity: 0.4, position: "absolute", top: 16, left: 20 }}>“</div>
+                  <p className="serif" style={{ fontSize: "clamp(20px, 3.2vw, 28px)", fontWeight: 300, fontStyle: "italic", color: "#2a1f1f", lineHeight: 1.5, paddingTop: 20, position: "relative", zIndex: 1 }}>
+                    {quizResult.affirmation}
                   </p>
                 </div>
 
-                <p style={{ fontSize: 13, color: "#9a8f8a", marginBottom: 20, letterSpacing: "0.05em" }}>
-                  Share your result with someone who needs to hear it today 🌸
+                {/* 2. RESULT TITLE */}
+                <h3 className="serif" style={{ fontSize: "clamp(34px, 5.5vw, 56px)", fontWeight: 300, color: "#2a1f1f", lineHeight: 1.05, marginBottom: 28, letterSpacing: "-0.01em" }}>
+                  You’re {quizResult.title}
+                </h3>
+
+                {/* 3. YOUR ENERGY LATELY */}
+                <div style={{ marginBottom: 28 }}>
+                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#b5606a", marginBottom: 12, fontWeight: 400 }}>Your energy lately</p>
+                  <p style={{ color: "#6b5555", fontSize: 16, lineHeight: 1.85, maxWidth: 580, margin: "0 auto" }}>
+                    {quizResult.energy}
+                  </p>
+                </div>
+
+                <div style={{ width: 40, height: 1, background: "rgba(181,96,106,0.3)", margin: "0 auto 28px", borderRadius: 2 }} />
+
+                {/* 4. TINY RITUAL */}
+                <div style={{ background: "#f7f3ef", borderRadius: 20, padding: "24px", marginBottom: 24, textAlign: "left" }}>
+                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#6b8c72", marginBottom: 10, fontWeight: 400 }}>Tiny ritual for this week</p>
+                  <p style={{ color: "#2a1f1f", fontSize: 15, lineHeight: 1.75 }}>{quizResult.ritual}</p>
+                </div>
+
+                {/* 5. JOURNAL PROMPT */}
+                <div style={{ borderLeft: "2px solid #b5606a", paddingLeft: 20, marginBottom: 40, textAlign: "left" }}>
+                  <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "#b5606a", marginBottom: 8, fontWeight: 400 }}>Journal prompt</p>
+                  <p className="serif" style={{ color: "#6b5555", fontSize: 18, fontStyle: "italic", lineHeight: 1.6, fontWeight: 300 }}>"{quizResult.prompt}"</p>
+                </div>
+
+                <p style={{ fontSize: 12, color: "#9a8f8a", marginBottom: 18, letterSpacing: "0.05em" }}>
+                  This felt accurate? Share it. 🌸
                 </p>
                 <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-                  <button onClick={resetQuiz} className="pill-btn pill-rose">
-                    Take It Again
-                  </button>
                   <button
                     onClick={() => {
-                      const text = `I'm "${quizResult.title}" — ${quizResult.archetype} 🌸\n\n"${quizResult.affirmation}"\n\nDiscover yours at bloomandco.co.ke`;
+                      const text = quizResult.title + "\n\n\"" + quizResult.affirmation + "\"\n\nDiscover yours at bloomandco.co.ke 🌸";
                       if (navigator.share) { navigator.share({ text }); }
-                      else { navigator.clipboard.writeText(text).then(() => alert("Result copied! Share it with someone 🌸")); }
+                      else { navigator.clipboard.writeText(text).then(() => alert("Copied! Share it with someone who needs it 🌸")); }
                     }}
-                    className="pill-btn pill-outline-rose">
+                    className="pill-btn pill-rose">
                     Share My Result
+                  </button>
+                  <button onClick={resetQuiz} className="pill-btn pill-outline-rose">
+                    Take It Again
                   </button>
                 </div>
               </div>
@@ -858,7 +866,6 @@ export default function BloomWebsite() {
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <a href="#contact" className="pill-btn pill-rose">Get In Touch</a>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="pill-btn pill-outline-rose">WhatsApp Us</a>
               </div>
             </div>
             <div>
