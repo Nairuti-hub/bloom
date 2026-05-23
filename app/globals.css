@@ -2,16 +2,18 @@
 
 :root {
   --background: #F7F3EE;
-  --foreground: #4E4A46;
-  --sage: #A8B29A;
-  --deep-olive: #6F7865;
-  --gold: #B89B72;
+  --foreground: #2E2A28;
+  --sage: #6F7D68;
+  --sage-dark: #55614F;
+  --accent-rose: #C6848F;
+  --soft-rose: #E7C8CF;
   --cream: #F7F3EE;
   --linen: #EFE7DD;
-  --clay: #B89A8C;
-  --border: #DDD5CA;
-  --text-muted: #7A756F;
-  --plum: #4E4A46;
+  --gold: #C9A46A;
+  --card-bg: #FFFDFC;
+  --border: #DDD3CC;
+  --text-muted: #6B625D;
+  --charcoal: #2E2A28;
 }
 
 @theme inline {
@@ -19,7 +21,7 @@
   --color-foreground: var(--foreground);
 }
 
-/* Bloom & Co — light-only, gender-neutral luxury wellness */
+/* Bloom & Co — sage-led, gender-neutral luxury wellness */
 
 *, *::before, *::after {
   box-sizing: border-box;
