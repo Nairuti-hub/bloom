@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f3ef;
-  --foreground: #2a1f1f;
-  --rose: #b5606a;
-  --pale-rose: #f5e6e8;
-  --sage: #6b8c72;
-  --cream: #f7f3ef;
-  --plum: #2a1f1f;
+  --background: #F7F3EE;
+  --foreground: #4E4A46;
+  --sage: #A8B29A;
+  --deep-olive: #6F7865;
+  --gold: #B89B72;
+  --cream: #F7F3EE;
+  --linen: #EFE7DD;
+  --clay: #B89A8C;
+  --border: #DDD5CA;
+  --text-muted: #7A756F;
+  --plum: #4E4A46;
 }
 
 @theme inline {
@@ -15,7 +19,7 @@
   --color-foreground: var(--foreground);
 }
 
-/* Remove dark mode override — Bloom & Co is light-only */
+/* Bloom & Co — light-only, gender-neutral luxury wellness */
 
 *, *::before, *::after {
   box-sizing: border-box;
