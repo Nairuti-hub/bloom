@@ -278,10 +278,10 @@ export default function BloomWebsite() {
   const resetQuiz = () => { setQuizStarted(false); setQuizIndex(0); setQuizAnswers([]); setQuizResult(null); };
 
   const contactItems = [
-    { label: "Instagram", value: "@bloomco.ke",          icon: "📸",                href: INSTAGRAM_URL },
-    { label: "Email",     value: "bloomandco@gmail.com",  icon: <Mail size={18} />,  href: "mailto:bloomandco@gmail.com" },
-    { label: "Phone",     value: "+254 724 973 277",      icon: <Phone size={18} />, href: "tel:+254724973277" },
-    { label: "Location",  value: "Nairobi, Kenya",        icon: <MapPin size={18} /> },
+    { label: "Instagram",       value: "@bloomco.ke",                  icon: "📸",                href: "https://instagram.com/bloomco.ke" },
+    { label: "Business Email",  value: "hello@bloomwellnessandco.com", icon: <Mail size={18} />,  href: "mailto:hello@bloomwellnessandco.com" },
+    { label: "Phone",           value: "+254 724 973 277",             icon: <Phone size={18} />, href: "tel:+254724973277" },
+    { label: "Location",        value: "Nairobi, Kenya",               icon: <MapPin size={18} /> },
   ];
 
   const wellnessProducts = products.filter(p => p.category === "wellness");
@@ -1189,9 +1189,12 @@ export default function BloomWebsite() {
                     {item.icon}
                   </div>
                   <div>
-                    <p style={{ fontSize: 9, letterSpacing: "0.32em", textTransform: "uppercase", color: "#C9A46A", marginBottom: 4, opacity: 0.85 }}>{item.label}</p>
+                    <p style={{ fontSize: 9, letterSpacing: "0.32em", textTransform: "uppercase", color: "#C9A46A", marginBottom: 4, opacity: 0.6 }}>{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} style={{ fontSize: 15, color: "#3A3532", textDecoration: "none" }}>
+                      <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        style={{ fontSize: 15, color: "#3A3532", textDecoration: "none", transition: "color 0.25s ease", cursor: "pointer" }}
+                        onMouseEnter={e => e.currentTarget.style.color = "#6F7D68"}
+                        onMouseLeave={e => e.currentTarget.style.color = "#3A3532"}>
                         {item.value}
                       </a>
                     ) : (
@@ -1222,7 +1225,7 @@ export default function BloomWebsite() {
                 { label: "Instagram", href: INSTAGRAM_URL },
                 { label: "WhatsApp", href: WHATSAPP_URL },
                 { label: "Shop", href: SHOP_URL },
-                { label: "Email", href: "mailto:bloomandco@gmail.com" },
+                { label: "Email", href: "mailto:hello@bloomwellnessandco.com" },
               ].map((l) => (
                 <a key={l.label} href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   style={{ color: "rgba(255,255,255,0.35)", fontSize: 11, textDecoration: "none", transition: "color 0.25s", letterSpacing: "0.14em", textTransform: "uppercase" }}
